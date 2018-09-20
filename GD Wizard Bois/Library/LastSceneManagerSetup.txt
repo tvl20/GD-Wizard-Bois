@@ -1,0 +1,4 @@
+sceneSetups:
+- path: Assets/Scenes/MultiplayerPatternDemo.unity
+  isLoaded: 1
+  isActive: 1

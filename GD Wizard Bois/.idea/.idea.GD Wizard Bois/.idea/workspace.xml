@@ -1,0 +1,617 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="bd56d3bc-9bd3-4181-9146-1a78acd5ed64" name="Default" comment="" />
+    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
+    <option name="TRACKING_ENABLED" value="true" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileEditorManager">
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+      <file leaf-file-name="InstructionController.cs" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Assets/Scripts/InstructionController.cs">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="256">
+              <caret line="19" lean-forward="true" selection-start-line="19" selection-end-line="19" />
+              <folding>
+                <marker date="1537437341340" expanded="false" signature="6:108" ph="..." />
+                <marker date="1537437341340" expanded="true" signature="163:2466" ph="{...}" />
+                <marker date="1537437341340" expanded="true" signature="574:677" ph="{...}" />
+                <marker date="1537437341340" expanded="true" signature="704:1154" ph="{...}" />
+                <marker date="1537437341340" expanded="true" signature="735:1087" ph="{...}" />
+                <marker date="1537437341340" expanded="true" signature="816:1077" ph="{...}" />
+                <marker date="1537437341340" expanded="true" signature="1253:1514" ph="{...}" />
+                <marker date="1537437341340" expanded="true" signature="1545:2160" ph="{...}" />
+                <marker date="1537437341340" expanded="true" signature="1923:2088" ph="{...}" />
+                <marker date="1537437341340" expanded="true" signature="2020:2078" ph="{...}" />
+                <marker date="1537437341340" expanded="true" signature="2213:2464" ph="{...}" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="InstructionControllerUI.cs" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Assets/Scripts/InstructionControllerUI.cs">
+          <provider selected="true" editor-type-id="text-editor">
+            <state>
+              <folding>
+                <marker date="1537432571001" expanded="false" signature="6:144" ph="..." />
+                <marker date="1537432571001" expanded="true" signature="251:1293" ph="{...}" />
+                <marker date="1537432571001" expanded="true" signature="428:579" ph="{...}" />
+                <marker date="1537432571001" expanded="true" signature="606:1163" ph="{...}" />
+                <marker date="1537432571001" expanded="true" signature="743:928" ph="{...}" />
+                <marker date="1537432571001" expanded="true" signature="941:1157" ph="{...}" />
+                <marker date="1537432571001" expanded="true" signature="1197:1291" ph="{...}" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="PlayerConnection.cs" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/Assets/Scripts/PlayerConnection.cs">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="21">
+              <caret line="11" column="49" selection-start-line="11" selection-start-column="49" selection-end-line="11" selection-end-column="49" />
+              <folding>
+                <marker date="1536932490340" expanded="false" signature="6:108" ph="..." />
+                <marker date="1536932490340" expanded="true" signature="158:1331" ph="{...}" />
+                <marker date="1536932490340" expanded="true" signature="327:783" ph="{...}" />
+                <marker date="1536932490340" expanded="true" signature="859:1064" ph="{...}" />
+                <marker date="1536932490340" expanded="true" signature="948:1061" ph="{...}" />
+                <marker date="1536932490340" expanded="true" signature="1067:1094" ph="/* Commands ... */" />
+                <marker date="1536932490340" expanded="true" signature="1197:1329" ph="{...}" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="TouchPatternInput.cs" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Assets/Scripts/TouchPatternInput.cs">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-1067">
+              <folding>
+                <marker date="1537432571018" expanded="false" signature="6:123" ph="..." />
+                <marker date="1537432571018" expanded="true" signature="304:2521" ph="{...}" />
+                <marker date="1537432571018" expanded="true" signature="472:541" ph="{...}" />
+                <marker date="1537432571018" expanded="true" signature="565:973" ph="{...}" />
+                <marker date="1537432571018" expanded="true" signature="723:797" ph="{...}" />
+                <marker date="1537432571018" expanded="true" signature="857:970" ph="{...}" />
+                <marker date="1537432571018" expanded="true" signature="1044:1256" ph="{...}" />
+                <marker date="1537432571018" expanded="true" signature="1331:1407" ph="{...}" />
+                <marker date="1537432571018" expanded="true" signature="1477:1517" ph="{...}" />
+                <marker date="1537432571018" expanded="true" signature="1542:2008" ph="{...}" />
+                <marker date="1537432571018" expanded="true" signature="1691:2005" ph="{...}" />
+                <marker date="1537432571018" expanded="true" signature="1847:1881" ph="{...}" />
+                <marker date="1537432571018" expanded="true" signature="2056:2258" ph="{...}" />
+                <marker date="1537432571018" expanded="true" signature="2122:2255" ph="{...}" />
+                <marker date="1537432571018" expanded="true" signature="2318:2519" ph="{...}" />
+                <marker date="1537432571018" expanded="true" signature="2371:2485" ph="{...}" />
+                <marker date="1537432571018" expanded="true" signature="2432:2481" ph="{...}" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="TouchPatternLines.cs" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Assets/Scripts/TouchPatternLines.cs">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="416">
+              <caret line="29" column="7" selection-start-line="29" selection-start-column="7" selection-end-line="33" selection-end-column="62" />
+              <folding>
+                <marker date="1537432423989" expanded="false" signature="6:102" ph="..." />
+                <marker date="1537432423989" expanded="true" signature="218:3114" ph="{...}" />
+                <marker date="1537432423989" expanded="true" signature="355:659" ph="{...}" />
+                <marker date="1537432423989" expanded="true" signature="747:1939" ph="{...}" />
+                <marker date="1537432423989" expanded="true" signature="762:900" ph="/* TODO: REMOVE THIS CODE/COMMENT ... */" />
+                <marker date="1537432423989" expanded="true" signature="1140:1933" ph="/* just redraw the entire line ... */" />
+                <marker date="1537432423989" expanded="true" signature="2010:2215" ph="{...}" />
+                <marker date="1537432423989" expanded="true" signature="2109:2176" ph="{...}" />
+                <marker date="1537432423989" expanded="true" signature="2217:3112" ph="/* private IEnumerator drawLinesCoroutine() ... */" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="MainConnectionMenuScript.cs" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Assets/Scripts/MainConnectionMenuScript.cs">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="160">
+              <caret line="12" column="25" selection-start-line="12" selection-start-column="25" selection-end-line="12" selection-end-column="25" />
+              <folding>
+                <marker date="1537437085958" expanded="false" signature="6:78" ph="..." />
+                <marker date="1537437085958" expanded="true" signature="185:599" ph="{...}" />
+                <marker date="1537437085958" expanded="true" signature="249:389" ph="{...}" />
+                <marker date="1537437085958" expanded="true" signature="417:597" ph="{...}" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+    </leaf>
+  </component>
+  <component name="FindInProjectRecents">
+    <findStrings>
+      <find>nod</find>
+      <find>nodes</find>
+    </findStrings>
+  </component>
+  <component name="HighlightingSettingsPerFile">
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/InstructionControllerUI.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/TouchPatternLines.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/PlayerConnection.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/TouchPatternInput.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/MainConnectionMenuScript.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/InstructionController.cs" root0="FORCE_HIGHLIGHTING" />
+  </component>
+  <component name="IdeDocumentHistory">
+    <option name="CHANGED_PATHS">
+      <list>
+        <option value="$PROJECT_DIR$/Assets/TouchPatternHandler.cs" />
+        <option value="$PROJECT_DIR$/Assets/TouchPatternLineHandler.cs" />
+        <option value="$PROJECT_DIR$/Assets/CustomNetworkManager.cs" />
+        <option value="$PROJECT_DIR$/Assets/InstructionManagerUI.cs" />
+        <option value="$PROJECT_DIR$/Assets/PlayerConnection.cs" />
+        <option value="$PROJECT_DIR$/Assets/TouchPatternLines.cs" />
+        <option value="$PROJECT_DIR$/Assets/TouchPatternInput.cs" />
+        <option value="$PROJECT_DIR$/Assets/InstructionControllerUI.cs" />
+        <option value="$PROJECT_DIR$/Assets/InstructionController.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/NetworkManagerUI.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/MainConnectionMenuScript.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/InstructionController.cs" />
+      </list>
+    </option>
+  </component>
+  <component name="JsBuildToolGruntFileManager" detection-done="true" sorting="DEFINITION_ORDER" />
+  <component name="JsBuildToolPackageJson" detection-done="true" sorting="DEFINITION_ORDER" />
+  <component name="JsGulpfileManager">
+    <detection-done>true</detection-done>
+    <sorting>DEFINITION_ORDER</sorting>
+  </component>
+  <component name="NodePackageJsonFileManager">
+    <packageJsonPaths />
+  </component>
+  <component name="ProjectFrameBounds" extendedState="6">
+    <option name="x" value="240" />
+    <option name="y" value="125" />
+    <option name="width" value="1440" />
+    <option name="height" value="775" />
+  </component>
+  <component name="ProjectView">
+    <navigator currentView="UnityExplorer" proportions="" version="1">
+      <foldersAlwaysOnTop value="true" />
+    </navigator>
+    <panes>
+      <pane id="SolutionExplorer">
+        <option name="show-file-system" value="false" />
+        <option name="show-all-items" value="false" />
+      </pane>
+      <pane id="UnityExplorer">
+        <subPane>
+          <expand>
+            <path>
+              <item name="" type="ad4990d8:FileSystemViewPaneBase$ProjectViewPaneTreeStructure$createRoot$1" />
+              <item name="GD Wizard Bois" type="483dac07:UnityExplorerNode$Root" />
+            </path>
+            <path>
+              <item name="" type="ad4990d8:FileSystemViewPaneBase$ProjectViewPaneTreeStructure$createRoot$1" />
+              <item name="GD Wizard Bois" type="483dac07:UnityExplorerNode$Root" />
+              <item name="" type="1045f7f1:UnityExplorerNode" />
+            </path>
+          </expand>
+          <select />
+        </subPane>
+        <option name="show-hidden-items" value="false" />
+      </pane>
+      <pane id="Scratches" />
+    </panes>
+  </component>
+  <component name="PropertiesComponent">
+    <property name="Rider.ProjectViewActivator.IsNotFirstRun" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="settings.editor.selected.configurable" value="preferences.lookFeel" />
+  </component>
+  <component name="RunDashboard">
+    <option name="ruleStates">
+      <list>
+        <RuleState>
+          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
+        </RuleState>
+        <RuleState>
+          <option name="name" value="StatusDashboardGroupingRule" />
+        </RuleState>
+      </list>
+    </option>
+  </component>
+  <component name="RunManager">
+    <configuration name="Attach to Unity Editor" type="UNITY_DEBUG_RUN_CONFIGURATION" factoryName="Unity Debug" show_console_on_std_err="false" show_console_on_std_out="false" port="50000" address="localhost">
+      <option name="listenPortForConnections" value="false" />
+      <option name="pid" />
+    </configuration>
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="bd56d3bc-9bd3-4181-9146-1a78acd5ed64" name="Default" comment="" />
+      <created>1536676803582</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1536676803582</updated>
+      <workItem from="1536676812000" duration="9650000" />
+      <workItem from="1536820030941" duration="686000" />
+      <workItem from="1536832776461" duration="10771000" />
+      <workItem from="1536860023026" duration="6381000" />
+      <workItem from="1536916630912" duration="5113000" />
+      <workItem from="1536922160586" duration="8888000" />
+      <workItem from="1537356393786" duration="10868000" />
+      <workItem from="1537426637518" duration="6579000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TimeTrackingManager">
+    <option name="totallyTimeSpent" value="58936000" />
+  </component>
+  <component name="TodoView">
+    <todo-panel id="selected-file">
+      <is-autoscroll-to-source value="true" />
+    </todo-panel>
+    <todo-panel id="all">
+      <are-packages-shown value="true" />
+      <is-autoscroll-to-source value="true" />
+    </todo-panel>
+  </component>
+  <component name="ToolWindowManager">
+    <frame x="-7" y="-7" width="1550" height="838" extended-state="6" />
+    <editor active="true" />
+    <layout>
+      <window_info anchor="bottom" id="TODO" order="6" />
+      <window_info anchor="right" id="Errors In Solution" order="3" />
+      <window_info anchor="bottom" id="Event Log" order="7" side_tool="true" />
+      <window_info anchor="bottom" id="Unit Tests" order="7" />
+      <window_info anchor="bottom" id="Database Changes" order="7" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Run" order="2" />
+      <window_info anchor="bottom" id="Version Control" order="7" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Terminal" order="7" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.19060403" />
+      <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Unity" order="7" />
+      <window_info anchor="right" id="Database" order="3" />
+      <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
+      <window_info id="Favorites" order="2" side_tool="true" />
+      <window_info anchor="bottom" id="NuGet" order="7" />
+      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
+      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
+      <window_info anchor="right" id="Commander" order="0" weight="0.4" />
+      <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
+      <window_info anchor="bottom" id="Message" order="0" />
+      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
+      <window_info anchor="bottom" id="Find" order="1" />
+    </layout>
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="1" />
+  </component>
+  <component name="UnityUnitTestConfiguration" currentTestLauncher="NUnit" />
+  <component name="VcsContentAnnotationSettings">
+    <option name="myLimit" value="2678400000" />
+  </component>
+  <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/Assets/TouchPatternInput.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1152">
+          <caret line="76" column="28" selection-start-line="76" selection-start-column="28" selection-end-line="76" selection-end-column="28" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Assets/PlayerConnection.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="640">
+          <caret line="43" column="34" selection-start-line="43" selection-start-column="34" selection-end-line="43" selection-end-column="34" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Assets/InstructionController.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1024">
+          <caret line="67" column="17" selection-start-line="67" selection-start-column="17" selection-end-line="67" selection-end-column="17" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Assets/InstructionControllerUI.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="320">
+          <caret line="25" column="60" selection-start-line="25" selection-start-column="60" selection-end-line="25" selection-end-column="60" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Assets/TouchPatternLines.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="368">
+          <caret line="26" column="5" lean-forward="true" selection-start-line="26" selection-start-column="5" selection-end-line="26" selection-end-column="5" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Assets/TouchPatternInput.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1248">
+          <caret line="82" column="16" selection-start-line="82" selection-start-column="16" selection-end-line="82" selection-end-column="16" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Assets/PlayerConnection.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="208">
+          <caret line="16" column="59" selection-start-line="16" selection-start-column="59" selection-end-line="16" selection-end-column="59" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Assets/InstructionControllerUI.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="320">
+          <caret line="25" column="60" selection-start-line="25" selection-start-column="60" selection-end-line="25" selection-end-column="60" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Assets/TouchPatternLines.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="768">
+          <caret line="51" selection-start-line="51" selection-end-line="51" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Assets/InstructionController.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1280">
+          <caret line="83" column="12" selection-start-line="83" selection-start-column="12" selection-end-line="83" selection-end-column="12" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Assets/TouchPatternInput.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="176">
+          <caret line="15" column="30" selection-start-line="15" selection-start-column="30" selection-end-line="15" selection-end-column="30" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Assets/PlayerConnection.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="560">
+          <caret line="38" column="50" selection-start-line="38" selection-start-column="50" selection-end-line="38" selection-end-column="50" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Assets/InstructionController.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="320">
+          <caret line="20" selection-start-line="20" selection-end-line="20" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Assets/TouchPatternLines.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="416">
+          <caret line="29" column="41" selection-start-line="29" selection-start-column="41" selection-end-line="29" selection-end-column="41" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Assets/InstructionControllerUI.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="400">
+          <caret line="25" column="81" selection-start-line="25" selection-start-column="81" selection-end-line="25" selection-end-column="81" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Assets/TouchPatternInput.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="176">
+          <caret line="15" column="30" selection-start-line="15" selection-start-column="30" selection-end-line="15" selection-end-column="30" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Assets/PlayerConnection.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="176">
+          <caret line="11" column="5" selection-start-line="11" selection-start-column="5" selection-end-line="11" selection-end-column="5" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Assets/InstructionController.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="48">
+          <caret line="5" column="1" lean-forward="true" selection-start-line="5" selection-start-column="1" selection-end-line="17" selection-end-column="5" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Assets/TouchPatternLines.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="464">
+          <caret line="29" column="41" selection-start-line="29" selection-start-column="41" selection-end-line="29" selection-end-column="41" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Assets/TouchPatternInput.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="816">
+          <caret line="71" column="67" selection-start-line="71" selection-start-column="67" selection-end-line="71" selection-end-column="67" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Assets/TouchPatternLines.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="400">
+          <caret line="25" column="5" lean-forward="true" selection-start-line="25" selection-start-column="5" selection-end-line="25" selection-end-column="5" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Assets/TouchPatternInput.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="656">
+          <caret line="45" selection-start-line="45" selection-end-line="45" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Assets/TouchPatternInput.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="720">
+          <caret line="45" selection-start-line="45" selection-end-line="45" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Assets/TouchPatternLineHandler.cs" />
+    <entry file="file://$PROJECT_DIR$/Assets/CustomNetworkManager.cs" />
+    <entry file="file://$PROJECT_DIR$/Assets/TouchPatternLines.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="480">
+          <caret line="33" column="22" selection-start-line="33" selection-start-column="22" selection-end-line="33" selection-end-column="22" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Assets/InstructionControllerUI.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="256">
+          <caret line="27" column="40" selection-start-line="27" selection-start-column="40" selection-end-line="27" selection-end-column="40" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Assets/InstructionController.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="231">
+          <caret line="57" column="25" selection-start-line="57" selection-start-column="25" selection-end-line="57" selection-end-column="25" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Assets/PlayerConnection.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="112">
+          <caret line="10" lean-forward="true" selection-start-line="10" selection-end-line="10" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Assets/TouchPatternInput.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="341">
+          <caret line="92" column="5" selection-start-line="92" selection-start-column="5" selection-end-line="92" selection-end-column="5" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Assets/Scripts/NetworkManagerUI.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="144">
+          <caret line="9" column="4" selection-start-line="9" selection-start-column="4" selection-end-line="9" selection-end-column="4" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Assets/Scripts/MainConnectionMenuScript.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="160">
+          <caret line="12" column="25" selection-start-line="12" selection-start-column="25" selection-end-line="12" selection-end-column="25" />
+          <folding>
+            <marker date="1537437085958" expanded="false" signature="6:78" ph="..." />
+            <marker date="1537437085958" expanded="true" signature="185:599" ph="{...}" />
+            <marker date="1537437085958" expanded="true" signature="249:389" ph="{...}" />
+            <marker date="1537437085958" expanded="true" signature="417:597" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Assets/Scripts/TouchPatternLines.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="416">
+          <caret line="29" column="7" selection-start-line="29" selection-start-column="7" selection-end-line="33" selection-end-column="62" />
+          <folding>
+            <marker date="1537432423989" expanded="false" signature="6:102" ph="..." />
+            <marker date="1537432423989" expanded="true" signature="218:3114" ph="{...}" />
+            <marker date="1537432423989" expanded="true" signature="355:659" ph="{...}" />
+            <marker date="1537432423989" expanded="true" signature="747:1939" ph="{...}" />
+            <marker date="1537432423989" expanded="true" signature="762:900" ph="/* TODO: REMOVE THIS CODE/COMMENT ... */" />
+            <marker date="1537432423989" expanded="true" signature="1140:1933" ph="/* just redraw the entire line ... */" />
+            <marker date="1537432423989" expanded="true" signature="2010:2215" ph="{...}" />
+            <marker date="1537432423989" expanded="true" signature="2109:2176" ph="{...}" />
+            <marker date="1537432423989" expanded="true" signature="2217:3112" ph="/* private IEnumerator drawLinesCoroutine() ... */" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Assets/Scripts/TouchPatternInput.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-1067">
+          <folding>
+            <marker date="1537432571018" expanded="false" signature="6:123" ph="..." />
+            <marker date="1537432571018" expanded="true" signature="304:2521" ph="{...}" />
+            <marker date="1537432571018" expanded="true" signature="472:541" ph="{...}" />
+            <marker date="1537432571018" expanded="true" signature="565:973" ph="{...}" />
+            <marker date="1537432571018" expanded="true" signature="723:797" ph="{...}" />
+            <marker date="1537432571018" expanded="true" signature="857:970" ph="{...}" />
+            <marker date="1537432571018" expanded="true" signature="1044:1256" ph="{...}" />
+            <marker date="1537432571018" expanded="true" signature="1331:1407" ph="{...}" />
+            <marker date="1537432571018" expanded="true" signature="1477:1517" ph="{...}" />
+            <marker date="1537432571018" expanded="true" signature="1542:2008" ph="{...}" />
+            <marker date="1537432571018" expanded="true" signature="1691:2005" ph="{...}" />
+            <marker date="1537432571018" expanded="true" signature="1847:1881" ph="{...}" />
+            <marker date="1537432571018" expanded="true" signature="2056:2258" ph="{...}" />
+            <marker date="1537432571018" expanded="true" signature="2122:2255" ph="{...}" />
+            <marker date="1537432571018" expanded="true" signature="2318:2519" ph="{...}" />
+            <marker date="1537432571018" expanded="true" signature="2371:2485" ph="{...}" />
+            <marker date="1537432571018" expanded="true" signature="2432:2481" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Assets/Scripts/InstructionControllerUI.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <folding>
+            <marker date="1537432571001" expanded="false" signature="6:144" ph="..." />
+            <marker date="1537432571001" expanded="true" signature="251:1293" ph="{...}" />
+            <marker date="1537432571001" expanded="true" signature="428:579" ph="{...}" />
+            <marker date="1537432571001" expanded="true" signature="606:1163" ph="{...}" />
+            <marker date="1537432571001" expanded="true" signature="743:928" ph="{...}" />
+            <marker date="1537432571001" expanded="true" signature="941:1157" ph="{...}" />
+            <marker date="1537432571001" expanded="true" signature="1197:1291" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Assets/Scripts/InstructionController.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="256">
+          <caret line="19" lean-forward="true" selection-start-line="19" selection-end-line="19" />
+          <folding>
+            <marker date="1537437341340" expanded="false" signature="6:108" ph="..." />
+            <marker date="1537437341340" expanded="true" signature="163:2466" ph="{...}" />
+            <marker date="1537437341340" expanded="true" signature="574:677" ph="{...}" />
+            <marker date="1537437341340" expanded="true" signature="704:1154" ph="{...}" />
+            <marker date="1537437341340" expanded="true" signature="735:1087" ph="{...}" />
+            <marker date="1537437341340" expanded="true" signature="816:1077" ph="{...}" />
+            <marker date="1537437341340" expanded="true" signature="1253:1514" ph="{...}" />
+            <marker date="1537437341340" expanded="true" signature="1545:2160" ph="{...}" />
+            <marker date="1537437341340" expanded="true" signature="1923:2088" ph="{...}" />
+            <marker date="1537437341340" expanded="true" signature="2020:2078" ph="{...}" />
+            <marker date="1537437341340" expanded="true" signature="2213:2464" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Assets/Scripts/PlayerConnection.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="21">
+          <caret line="11" column="49" selection-start-line="11" selection-start-column="49" selection-end-line="11" selection-end-column="49" />
+          <folding>
+            <marker date="1536932490340" expanded="false" signature="6:108" ph="..." />
+            <marker date="1536932490340" expanded="true" signature="158:1331" ph="{...}" />
+            <marker date="1536932490340" expanded="true" signature="327:783" ph="{...}" />
+            <marker date="1536932490340" expanded="true" signature="859:1064" ph="{...}" />
+            <marker date="1536932490340" expanded="true" signature="948:1061" ph="{...}" />
+            <marker date="1536932490340" expanded="true" signature="1067:1094" ph="/* Commands ... */" />
+            <marker date="1536932490340" expanded="true" signature="1197:1329" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+  </component>
+</project>
