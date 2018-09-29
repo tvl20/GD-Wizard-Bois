@@ -6,12 +6,37 @@
       <e p="Assembly-CSharp.csproj" t="IncludeRecursive" />
       <e p="Assets" t="Include">
         <e p="Scripts" t="Include">
+          <e p="BossModule" t="Include">
+            <e p="BossEnemy.cs" t="Include" />
+            <e p="BossSpell.cs" t="Include" />
+            <e p="HealthBarUpdater.cs" t="Include" />
+          </e>
+          <e p="ConnectionModule" t="Include">
+            <e p="MainConnectionMenuScript.cs" t="Include" />
+            <e p="PlayerConnection.cs" t="Include" />
+          </e>
           <e p="InstructionController.cs" t="Include" />
           <e p="InstructionControllerUI.cs" t="Include" />
-          <e p="MainConnectionMenuScript.cs" t="Include" />
-          <e p="PlayerConnection.cs" t="Include" />
-          <e p="TouchPatternInput.cs" t="Include" />
-          <e p="TouchPatternLines.cs" t="Include" />
+          <e p="PatternModule" t="Include">
+            <e p="TouchPatternInput.cs" t="Include" />
+            <e p="TouchPatternLines.cs" t="Include" />
+          </e>
+          <e p="Spell.cs" t="Include" />
+          <e p="SpellStatusDisplay.cs" t="Include" />
+          <e p="StatusModule" t="Include">
+            <e p="DamageAble.cs" t="Include" />
+            <e p="HealthStatus.cs" t="Include" />
+            <e p="StatusEffect.cs" t="Include" />
+          </e>
+          <e p="TargetingModule" t="Include">
+            <e p="TargetingController.cs" t="Include" />
+            <e p="WizardTargetDisplay.cs" t="Include" />
+          </e>
+          <e p="TimerModule" t="Include">
+            <e p="TimerController.cs" t="Include" />
+            <e p="TimerUI.cs" t="Include" />
+          </e>
+          <e p="Wizard.cs" t="Include" />
         </e>
       </e>
       <e p="GD Wizard Bois.sln" t="IncludeFlat" />
