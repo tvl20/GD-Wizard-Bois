@@ -10,9 +10,12 @@ public class TouchPatternLines : MonoBehaviour
 
     private TouchPatternInput touchInput;
     private LineRenderer line;
+    private Camera mainCamera;
 
     private void Start()
     {
+        mainCamera = Camera.main;
+
         touchInput = GetComponent<TouchPatternInput>();
         touchInput.onFinishedPattern.AddListener(clearLines);
         touchInput.onNodeAddedToPattern.AddListener(connectLine);
@@ -26,7 +29,7 @@ public class TouchPatternLines : MonoBehaviour
         // TODO: REMOVE THIS CODE/COMMENT
         // Heb dit geprobeerd, zelfde probleem. ga nu ipv 1 lijnstuk toevoegen hele lijn opnieuw tekenen
         int target = targetNode - 1;
-        Vector3 newPosition = nodes[target].transform.position - Camera.current.transform.forward;
+        Vector3 newPosition = nodes[target].transform.position - mainCamera.transform.forward;
 
         line.positionCount++;
         line.SetPosition(line.positionCount - 1, newPosition);
