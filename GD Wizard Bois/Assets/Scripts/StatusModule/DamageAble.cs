@@ -9,6 +9,20 @@ public class DamageAble : NetworkBehaviour
 	// TODO EXPAND THIS AND MAKE IT BETTER
 	public int MaxHealth = 1;
 
+	// Events
+	// Take Damage
+	public delegate void EventTakeDamageDelegate(int amount);
+	[SyncEvent] public event EventTakeDamageDelegate EventOnTakeDamage;
+
+	// Healing Received
+	public delegate void EventHealingReceivedDelegate(int amount);
+	[SyncEvent] public event EventHealingReceivedDelegate EventOnHealingReceived;
+
+	// Zero Health
+	public delegate void EventZeroHealthDelegate();
+	[SyncEvent] public event EventZeroHealthDelegate EventOnZeroHealth;
+
+
 	public UnityEvent OnZeroHealthEvent = new UnityEvent();
 	public UnityEvent OnDamageTakenEvent = new UnityEvent();
 	public UnityEvent OnHealingReceivedEvent = new UnityEvent();
@@ -16,7 +30,7 @@ public class DamageAble : NetworkBehaviour
 	// So that the ZeroHealthEvent wont keep firing every frame
 	private bool alive = true;
 
-	[SyncVar] private int currentHealth;
+	private int currentHealth;
 
 	public int GetCurrentHealth()
 	{
@@ -26,7 +40,14 @@ public class DamageAble : NetworkBehaviour
 	private void Start()
 	{
 		currentHealth = MaxHealth;
-		OnDamageTakenEvent.Invoke();
+
+		EventOnTakeDamage += damageCurrentHealth;
+		EventOnHealingReceived += healCurrentHealth;
+		EventOnZeroHealth += onZeroHealth;
+
+//		OnDamageTakenEvent.Invoke();
+		if (EventOnTakeDamage != null)
+			EventOnTakeDamage.Invoke(0);
 	}
 
 	/// <summary>
@@ -40,59 +61,90 @@ public class DamageAble : NetworkBehaviour
 		CmdChangeHealth(amount);
 	}
 
+	private void damageCurrentHealth(int amount)
+	{
+		currentHealth -= amount;
+		if (currentHealth <= 0)
+		{
+			currentHealth = 0;
+		}
+	}
+
+	private void healCurrentHealth(int amount)
+	{
+		currentHealth += amount;
+		if (currentHealth > MaxHealth)
+		{
+			currentHealth = MaxHealth;
+		}
+	}
+
+	private void onZeroHealth()
+	{
+		alive = false;
+	}
+
 	////////////////////////////////////
 	////
 	[Command]
 	private void CmdChangeHealth(int amount)
 	{
-		currentHealth -= amount;
+//		currentHealth -= amount;
 //		Debug.Log("SERVER - taking damage: " + amount);
 
 		if (amount > 0)
 		{
-			RpcTriggerDamageEvent();
+//			RpcTriggerDamageEvent();
+			if (EventOnTakeDamage != null)
+				EventOnTakeDamage(amount);
 
-			if (currentHealth <= 0)
+			if (currentHealth - amount <= 0)
 			{
-				currentHealth = 0;
+//				currentHealth = 0;
 
 				if (alive)
 				{
-					alive = false;
-					RpcTriggerDeathEvent();
+//					alive = false;
+
+//					RpcTriggerDeathEvent();
+					if (EventOnZeroHealth != null)
+						EventOnZeroHealth();
 				}
 			}
 		}
 		else
 		{
-			if (currentHealth > MaxHealth)
-			{
-				currentHealth = MaxHealth;
-			}
-			RpcTriggerHealingEvent();
+//			if (currentHealth > MaxHealth)
+//			{
+//				currentHealth = MaxHealth;
+//			}
+
+//			RpcTriggerHealingEvent();
+			if (EventOnHealingReceived != null)
+				EventOnHealingReceived(-amount);
 		}
 	}
 
 
 	/////////////////////////////////////
 	////
-	[ClientRpc]
-	private void RpcTriggerDamageEvent()
-	{
-		Debug.Log("RPC DAMAGE EVENT");
-		OnDamageTakenEvent.Invoke();
-	}
-
-	[ClientRpc]
-	private void RpcTriggerDeathEvent()
-	{
-		OnZeroHealthEvent.Invoke();
-	}
-
-	[ClientRpc]
-	private void RpcTriggerHealingEvent()
-	{
-		Debug.Log("RPC HEALING EVENT");
-		OnHealingReceivedEvent.Invoke();
-	}
+//	[ClientRpc]
+//	private void RpcTriggerDamageEvent()
+//	{
+//		Debug.Log("RPC DAMAGE EVENT");
+//		OnDamageTakenEvent.Invoke();
+//	}
+//
+//	[ClientRpc]
+//	private void RpcTriggerDeathEvent()
+//	{
+//		OnZeroHealthEvent.Invoke();
+//	}
+//
+//	[ClientRpc]
+//	private void RpcTriggerHealingEvent()
+//	{
+//		Debug.Log("RPC HEALING EVENT");
+//		OnHealingReceivedEvent.Invoke();
+//	}
 }
