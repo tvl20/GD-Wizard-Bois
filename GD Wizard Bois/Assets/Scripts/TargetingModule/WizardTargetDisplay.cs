@@ -27,18 +27,7 @@ public class WizardTargetDisplay : MonoBehaviour
 
 	public void SetTarget(Wizard target)
 	{
-//		if (targetWizard != null)
-//		{
-//			targetWizard.healthScript.OnDamageTakenEvent.RemoveListener(onHealthUpdate);
-//			targetWizard.healthScript.OnHealingReceivedEvent.RemoveListener(onHealthUpdate);
-////			Debug.Log(targetWizard.WizardId + " < wizid 1");
-//		}
-
 		targetWizard = target;
-//		Debug.Log(targetWizard.WizardId + " < wizid 2");
-//		Debug.Log("Target > " + targetWizard);
-//		Debug.Log("Healthscript > " + targetWizard.healthScript);
-//		Debug.Log("DamageEvent > "  + targetWizard.healthScript.OnDamageTakenEvent);
 
 		if (targetWizard == null)
 		{
@@ -51,8 +40,6 @@ public class WizardTargetDisplay : MonoBehaviour
 		}
 		else
 		{
-//			targetWizard.healthScript.OnDamageTakenEvent.AddListener(onHealthUpdate);
-//			targetWizard.healthScript.OnHealingReceivedEvent.AddListener(onHealthUpdate);
 			targetWizard.healthScript.EventOnTakeDamage += onHealthUpdate;
 			targetWizard.healthScript.EventOnHealingReceived += onHealthUpdate;
 
@@ -65,7 +52,6 @@ public class WizardTargetDisplay : MonoBehaviour
 			}
 			else
 			{
-//				Debug.Log(targetWizard.WizardId + " < wizid");
 				targetButtonText.text = "Wizard " + targetWizard.WizardId;
 			}
 
@@ -84,7 +70,6 @@ public class WizardTargetDisplay : MonoBehaviour
 	{
 		Debug.Log("Health Update");
 		float sliderValue = (float) targetWizard.healthScript.GetCurrentHealth() / targetWizard.healthScript.MaxHealth;
-//		Debug.Log(sliderValue);
 		healthSlider.value = sliderValue;
 	}
 }

@@ -22,12 +22,6 @@ public class DamageAble : NetworkBehaviour
 	public delegate void EventZeroHealthDelegate();
 	[SyncEvent] public event EventZeroHealthDelegate EventOnZeroHealth;
 
-
-//	public UnityEvent OnZeroHealthEvent = new UnityEvent();
-//	public UnityEvent OnDamageTakenEvent = new UnityEvent();
-//	public UnityEvent OnHealingReceivedEvent = new UnityEvent();
-
-	// So that the ZeroHealthEvent wont keep firing every frame
 	private bool alive = true;
 
 	private int currentHealth;
@@ -44,10 +38,6 @@ public class DamageAble : NetworkBehaviour
 		EventOnTakeDamage += damageCurrentHealth;
 		EventOnHealingReceived += healCurrentHealth;
 		EventOnZeroHealth += onZeroHealth;
-
-//		OnDamageTakenEvent.Invoke();
-//		if (EventOnTakeDamage != null)
-//			EventOnTakeDamage.Invoke(0);
 	}
 
 	/// <summary>
@@ -89,62 +79,30 @@ public class DamageAble : NetworkBehaviour
 	[Command]
 	private void CmdChangeHealth(int amount)
 	{
-//		currentHealth -= amount;
-//		Debug.Log("SERVER - taking damage: " + amount);
-
 		if (amount > 0)
 		{
-//			RpcTriggerDamageEvent();
 			if (EventOnTakeDamage != null)
+			{
 				EventOnTakeDamage(amount);
+			}
 
 			if (currentHealth - amount <= 0)
 			{
-//				currentHealth = 0;
-
 				if (alive)
 				{
-//					alive = false;
-
-//					RpcTriggerDeathEvent();
 					if (EventOnZeroHealth != null)
+					{
 						EventOnZeroHealth();
+					}
 				}
 			}
 		}
 		else
 		{
-//			if (currentHealth > MaxHealth)
-//			{
-//				currentHealth = MaxHealth;
-//			}
-
-//			RpcTriggerHealingEvent();
 			if (EventOnHealingReceived != null)
+			{
 				EventOnHealingReceived(-amount);
+			}
 		}
 	}
-
-
-	/////////////////////////////////////
-	////
-//	[ClientRpc]
-//	private void RpcTriggerDamageEvent()
-//	{
-//		Debug.Log("RPC DAMAGE EVENT");
-//		OnDamageTakenEvent.Invoke();
-//	}
-//
-//	[ClientRpc]
-//	private void RpcTriggerDeathEvent()
-//	{
-//		OnZeroHealthEvent.Invoke();
-//	}
-//
-//	[ClientRpc]
-//	private void RpcTriggerHealingEvent()
-//	{
-//		Debug.Log("RPC HEALING EVENT");
-//		OnHealingReceivedEvent.Invoke();
-//	}
 }

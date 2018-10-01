@@ -10,8 +10,6 @@ public class HealthBarUpdater : MonoBehaviour
 
 	void Start ()
 	{
-//		HealthSource.OnDamageTakenEvent.AddListener(updateUI);
-//		HealthSource.OnHealingReceivedEvent.AddListener(updateUI);
 		HealthSource.EventOnTakeDamage += updateUI;
 		HealthSource.EventOnHealingReceived += updateUI;
 
