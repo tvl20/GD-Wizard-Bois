@@ -51,8 +51,10 @@ public class WizardTargetDisplay : MonoBehaviour
 		}
 		else
 		{
-			targetWizard.healthScript.OnDamageTakenEvent.AddListener(onHealthUpdate);
-			targetWizard.healthScript.OnHealingReceivedEvent.AddListener(onHealthUpdate);
+//			targetWizard.healthScript.OnDamageTakenEvent.AddListener(onHealthUpdate);
+//			targetWizard.healthScript.OnHealingReceivedEvent.AddListener(onHealthUpdate);
+			targetWizard.healthScript.EventOnTakeDamage += onHealthUpdate;
+			targetWizard.healthScript.EventOnHealingReceived += onHealthUpdate;
 
 			targetButton.interactable = true;
 
@@ -68,7 +70,7 @@ public class WizardTargetDisplay : MonoBehaviour
 			}
 
 			healthSlider.gameObject.SetActive(true);
-			onHealthUpdate();
+			onHealthUpdate(0);
 		}
 	}
 
@@ -78,7 +80,7 @@ public class WizardTargetDisplay : MonoBehaviour
 		OnWizardTargetClicked.Invoke(targetWizard.WizardId);
 	}
 
-	private void onHealthUpdate()
+	private void onHealthUpdate(int change)
 	{
 		Debug.Log("Health Update");
 		float sliderValue = (float) targetWizard.healthScript.GetCurrentHealth() / targetWizard.healthScript.MaxHealth;

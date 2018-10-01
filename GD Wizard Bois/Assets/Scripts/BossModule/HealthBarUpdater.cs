@@ -10,12 +10,15 @@ public class HealthBarUpdater : MonoBehaviour
 
 	void Start ()
 	{
-		HealthSource.OnDamageTakenEvent.AddListener(updateUI);
-		HealthSource.OnHealingReceivedEvent.AddListener(updateUI);
-		updateUI();
+//		HealthSource.OnDamageTakenEvent.AddListener(updateUI);
+//		HealthSource.OnHealingReceivedEvent.AddListener(updateUI);
+		HealthSource.EventOnTakeDamage += updateUI;
+		HealthSource.EventOnHealingReceived += updateUI;
+
+		updateUI(0);
 	}
 
-	private void updateUI()
+	private void updateUI(int change)
 	{
 		HealthBar.value = (float) HealthSource.GetCurrentHealth() / HealthSource.MaxHealth;
 	}

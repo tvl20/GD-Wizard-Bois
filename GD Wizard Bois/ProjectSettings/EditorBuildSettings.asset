@@ -5,13 +5,10 @@ EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Scenes:
-  - enabled: 0
+  - enabled: 1
     path: Assets/Scenes/Teun_LaunchScreen.unity
     guid: 6fd57506fdbe0de4e8d36be3993ed380
-  - enabled: 0
+  - enabled: 1
     path: Assets/Scenes/Teun_Combat.unity
     guid: 2d0503efe4da75246b9396b5f0de857c
-  - enabled: 1
-    path: Assets/Scenes/EventTestScene.unity
-    guid: 18b1e4dc213dc9c448ed8c2f8629b02c
   m_configObjects: {}

@@ -23,9 +23,9 @@ public class DamageAble : NetworkBehaviour
 	[SyncEvent] public event EventZeroHealthDelegate EventOnZeroHealth;
 
 
-	public UnityEvent OnZeroHealthEvent = new UnityEvent();
-	public UnityEvent OnDamageTakenEvent = new UnityEvent();
-	public UnityEvent OnHealingReceivedEvent = new UnityEvent();
+//	public UnityEvent OnZeroHealthEvent = new UnityEvent();
+//	public UnityEvent OnDamageTakenEvent = new UnityEvent();
+//	public UnityEvent OnHealingReceivedEvent = new UnityEvent();
 
 	// So that the ZeroHealthEvent wont keep firing every frame
 	private bool alive = true;
@@ -37,7 +37,7 @@ public class DamageAble : NetworkBehaviour
 		return currentHealth;
 	}
 
-	private void Start()
+	private void Awake()
 	{
 		currentHealth = MaxHealth;
 
@@ -46,8 +46,8 @@ public class DamageAble : NetworkBehaviour
 		EventOnZeroHealth += onZeroHealth;
 
 //		OnDamageTakenEvent.Invoke();
-		if (EventOnTakeDamage != null)
-			EventOnTakeDamage.Invoke(0);
+//		if (EventOnTakeDamage != null)
+//			EventOnTakeDamage.Invoke(0);
 	}
 
 	/// <summary>
