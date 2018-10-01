@@ -15,8 +15,6 @@
             <e p="MainConnectionMenuScript.cs" t="Include" />
             <e p="PlayerConnection.cs" t="Include" />
           </e>
-          <e p="InstructionController.cs" t="Include" />
-          <e p="InstructionControllerUI.cs" t="Include" />
           <e p="PatternModule" t="Include">
             <e p="TouchPatternInput.cs" t="Include" />
             <e p="TouchPatternLines.cs" t="Include" />
@@ -37,6 +35,16 @@
             <e p="TimerUI.cs" t="Include" />
           </e>
           <e p="Wizard.cs" t="Include" />
+        </e>
+        <e p="TestCases" t="Include">
+          <e p="Events" t="Include">
+            <e p="DamageTest.cs" t="Include" />
+            <e p="DamageTestUI.cs" t="Include" />
+          </e>
+          <e p="PatternSyncing" t="Include">
+            <e p="InstructionController.cs" t="Include" />
+            <e p="InstructionControllerUI.cs" t="Include" />
+          </e>
         </e>
       </e>
       <e p="GD Wizard Bois.sln" t="IncludeFlat" />

@@ -2,8 +2,14 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="bd56d3bc-9bd3-4181-9146-1a78acd5ed64" name="Default" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.GD Wizard Bois/.idea/contentModel.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.GD Wizard Bois/.idea/contentModel.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.GD Wizard Bois/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.GD Wizard Bois/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/PatternModule/TouchPatternLines.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/PatternModule/TouchPatternLines.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assembly-CSharp.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/Assembly-CSharp.csproj" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/InstructionController.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/InstructionController.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/InstructionControllerUI.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/InstructionControllerUI.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProjectSettings/EditorBuildSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/EditorBuildSettings.asset" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -14,160 +20,33 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="TargetingController.cs" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Assets/Scripts/TargetingModule/TargetingController.cs">
+      <file leaf-file-name="DamageTest.cs" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Assets/TestCases/Events/DamageTest.cs">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="2080">
-              <caret line="135" column="67" selection-start-line="135" selection-start-column="67" selection-end-line="135" selection-end-column="67" />
+            <state relative-caret-position="16">
+              <caret line="4" lean-forward="true" selection-start-line="4" selection-end-line="4" />
               <folding>
-                <marker date="1538055595176" expanded="false" signature="6:149" ph="..." />
-                <marker date="1538055595176" expanded="true" signature="558:621" ph="{...}" />
-                <marker date="1538055595176" expanded="true" signature="712:911" ph="{...}" />
-                <marker date="1538055595176" expanded="true" signature="794:905" ph="{...}" />
-                <marker date="1538055595176" expanded="true" signature="938:950" ph="{...}" />
-                <marker date="1538055595176" expanded="true" signature="952:1072" ph="/* public void AddWizardToTargeting(Wizard wizard) ... */" />
-                <marker date="1538055595176" expanded="true" signature="1113:3163" ph="{...}" />
-                <marker date="1538055595176" expanded="true" signature="1425:2504" ph="/* TODO: UPDATE THIS TO MAKE IT MORE EFFICIENT/OPTIMIZED ... */" />
-                <marker date="1538055595176" expanded="true" signature="2595:3157" ph="{...}" />
-                <marker date="1538055595176" expanded="true" signature="2712:2929" ph="{...}" />
-                <marker date="1538055595176" expanded="true" signature="2946:3147" ph="{...}" />
-                <marker date="1538055595176" expanded="true" signature="3204:3358" ph="{...}" />
-                <marker date="1538055595176" expanded="true" signature="3256:3330" ph="{...}" />
-                <marker date="1538055595176" expanded="true" signature="3398:3789" ph="{...}" />
-                <marker date="1538055595176" expanded="true" signature="3487:3591" ph="{...}" />
-                <marker date="1538055595176" expanded="true" signature="3593:3783" ph="/* Spell lockedSpell = allWizards[0].getLockedSpell(); ... */" />
-                <marker date="1538055595176" expanded="true" signature="3841:5056" ph="{...}" />
-                <marker date="1538055595176" expanded="true" signature="4046:5050" ph="{...}" />
-                <marker date="1538055595176" expanded="true" signature="4161:4575" ph="{...}" />
-                <marker date="1538055595176" expanded="true" signature="4295:4387" ph="{...}" />
-                <marker date="1538055595176" expanded="true" signature="4641:4996" ph="{...}" />
-                <marker date="1538055595176" expanded="true" signature="4767:4982" ph="/* foreach (Wizard wizard in allWizards) ... */" />
-                <marker date="1538055595176" expanded="true" signature="5059:5378" ph="/* TODO: improve / optimize this code. ... */" />
+                <marker date="1538403144523" expanded="false" signature="6:108" ph="..." />
+                <marker date="1538403144523" expanded="true" signature="152:825" ph="{...}" />
+                <marker date="1538403144523" expanded="true" signature="390:457" ph="{...}" />
+                <marker date="1538403144523" expanded="true" signature="512:543" ph="{...}" />
+                <marker date="1538403144523" expanded="true" signature="634:703" ph="{...}" />
+                <marker date="1538403144523" expanded="true" signature="797:823" ph="{...}" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="WizardTargetDisplay.cs" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Assets/Scripts/TargetingModule/WizardTargetDisplay.cs">
+      <file leaf-file-name="DamageTestUI.cs" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/Assets/TestCases/Events/DamageTestUI.cs">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1248">
-              <caret line="82" column="35" selection-start-line="82" selection-start-column="35" selection-end-line="82" selection-end-column="35" />
+            <state relative-caret-position="32">
+              <caret line="4" lean-forward="true" selection-start-line="4" selection-end-line="4" />
               <folding>
-                <marker date="1538056440873" expanded="false" signature="6:126" ph="..." />
-                <marker date="1538056440873" expanded="true" signature="230:2393" ph="{...}" />
-                <marker date="1538056440873" expanded="true" signature="513:700" ph="{...}" />
-                <marker date="1538056440873" expanded="true" signature="739:2018" ph="{...}" />
-                <marker date="1538056440873" expanded="true" signature="743:1008" ph="/* if (targetWizard != null) ... */" />
-                <marker date="1538056440873" expanded="true" signature="1035:1273" ph="/* Debug.Log(targetWizard.WizardId + &quot; &lt; wizid 2&quot;); ... */" />
-                <marker date="1538056440873" expanded="true" signature="1302:1475" ph="{...}" />
-                <marker date="1538056440873" expanded="true" signature="1482:2015" ph="{...}" />
-                <marker date="1538056440873" expanded="true" signature="1765:1811" ph="{...}" />
-                <marker date="1538056440873" expanded="true" signature="1819:1945" ph="{...}" />
-                <marker date="1538056440873" expanded="true" signature="2048:2145" ph="{...}" />
-                <marker date="1538056440873" expanded="true" signature="2177:2391" ph="{...}" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="PlayerConnection.cs" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Assets/Scripts/ConnectionModule/PlayerConnection.cs">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="832">
-              <caret line="55" column="20" selection-start-line="55" selection-start-column="20" selection-end-line="55" selection-end-column="20" />
-              <folding>
-                <marker date="1538056364704" expanded="false" signature="6:108" ph="..." />
-                <marker date="1538056364704" expanded="true" signature="297:371" ph="{...}" />
-                <marker date="1538056364704" expanded="true" signature="397:802" ph="{...}" />
-                <marker date="1538056364704" expanded="true" signature="647:796" ph="{...}" />
-                <marker date="1538056364704" expanded="true" signature="804:1019" ph="/* public void UseSpellOnWizards(Wizard[] targetWizards, Spell spell) ... */" />
-                <marker date="1538056364704" expanded="true" signature="1100:1424" ph="{...}" />
-                <marker date="1538056364704" expanded="true" signature="1513:2464" ph="{...}" />
-                <marker date="1538056364704" expanded="true" signature="1645:1710" ph="/* TODO: organise this code ... */" />
-                <marker date="1538056364704" expanded="true" signature="1761:2458" ph="{...}" />
-                <marker date="1538056364704" expanded="true" signature="1826:1997" ph="{...}" />
-                <marker date="1538056364704" expanded="true" signature="2056:2330" ph="{...}" />
-                <marker date="1538056364704" expanded="true" signature="2129:2316" ph="{...}" />
-                <marker date="1538056364704" expanded="true" signature="2533:2884" ph="{...}" />
-                <marker date="1538056364704" expanded="true" signature="2707:2878" ph="{...}" />
-                <marker date="1538056364704" expanded="true" signature="2890:2922" ph="/* ... */" />
-                <marker date="1538056364704" expanded="true" signature="2975:3040" ph="{...}" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="DamageAble.cs" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/Assets/Scripts/StatusModule/DamageAble.cs">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-299">
-              <caret line="43" column="8" selection-start-line="43" selection-start-column="8" selection-end-line="43" selection-end-column="8" />
-              <folding>
-                <marker date="1538056440863" expanded="false" signature="6:134" ph="..." />
-                <marker date="1538056440863" expanded="true" signature="178:1979" ph="{...}" />
-                <marker date="1538056440863" expanded="true" signature="586:616" ph="{...}" />
-                <marker date="1538056440863" expanded="true" signature="639:705" ph="{...}" />
-                <marker date="1538056440863" expanded="true" signature="708:956" ph="/// Use this method do reduce the health. If a negative parameter is given it will be seen as healing and restore ... " />
-                <marker date="1538056440863" expanded="true" signature="992:1099" ph="{...}" />
-                <marker date="1538056440863" expanded="true" signature="1102:1144" ph="/* ... */" />
-                <marker date="1538056440863" expanded="true" signature="1197:1594" ph="{...}" />
-                <marker date="1538056440863" expanded="true" signature="1298:1472" ph="{...}" />
-                <marker date="1538056440863" expanded="true" signature="1358:1468" ph="{...}" />
-                <marker date="1538056440863" expanded="true" signature="1402:1463" ph="{...}" />
-                <marker date="1538056440863" expanded="true" signature="1479:1591" ph="{...}" />
-                <marker date="1538056440863" expanded="true" signature="1517:1558" ph="{...}" />
-                <marker date="1538056440863" expanded="true" signature="1598:1641" ph="/* ... */" />
-                <marker date="1538056440863" expanded="true" signature="1692:1762" ph="{...}" />
-                <marker date="1538056440863" expanded="true" signature="1813:1849" ph="{...}" />
-                <marker date="1538056440863" expanded="true" signature="1902:1977" ph="{...}" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Wizard.cs" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Assets/Scripts/Wizard.cs">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="213">
-              <caret line="74" column="16" selection-start-line="74" selection-start-column="16" selection-end-line="74" selection-end-column="16" />
-              <folding>
-                <marker date="1538044722139" expanded="false" signature="6:122" ph="..." />
-                <marker date="1538044722139" expanded="true" signature="264:3111" ph="{...}" />
-                <marker date="1538044722139" expanded="true" signature="551:726" ph="{...}" />
-                <marker date="1538044722139" expanded="true" signature="630:698" ph="{...}" />
-                <marker date="1538044722139" expanded="true" signature="729:832" ph="/* private Spell lockedSpell = null; ... */" />
-                <marker date="1538044722139" expanded="true" signature="858:921" ph="{...}" />
-                <marker date="1538044722139" expanded="true" signature="1036:1545" ph="{...}" />
-                <marker date="1538044722139" expanded="true" signature="1547:2164" ph="/* private void Start() ... */" />
-                <marker date="1538044722139" expanded="true" signature="2195:2257" ph="{...}" />
-                <marker date="1538044722139" expanded="true" signature="2332:2773" ph="{...}" />
-                <marker date="1538044722139" expanded="true" signature="2510:2699" ph="{...}" />
-                <marker date="1538044722139" expanded="true" signature="2579:2689" ph="{...}" />
-                <marker date="1538044722139" expanded="true" signature="2779:2810" ph="/* ... */" />
-                <marker date="1538044722139" expanded="true" signature="2864:2904" ph="{...}" />
-                <marker date="1538044722139" expanded="true" signature="2965:3016" ph="{...}" />
-                <marker date="1538044722139" expanded="true" signature="3067:3109" ph="{...}" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="TouchPatternLines.cs" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Assets/Scripts/PatternModule/TouchPatternLines.cs">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="448">
-              <caret line="31" column="93" selection-start-line="31" selection-start-column="93" selection-end-line="31" selection-end-column="93" />
-              <folding>
-                <marker date="1538327664792" expanded="false" signature="6:102" ph="..." />
-                <marker date="1538327664792" expanded="true" signature="218:3114" ph="{...}" />
-                <marker date="1538327664792" expanded="true" signature="386:663" ph="{...}" />
-                <marker date="1538327664792" expanded="true" signature="751:1939" ph="{...}" />
-                <marker date="1538327664792" expanded="true" signature="766:904" ph="/* TODO: REMOVE THIS CODE/COMMENT ... */" />
-                <marker date="1538327664792" expanded="true" signature="1140:1933" ph="/* just redraw the entire line ... */" />
-                <marker date="1538327664792" expanded="true" signature="2010:2215" ph="{...}" />
-                <marker date="1538327664792" expanded="true" signature="2109:2176" ph="{...}" />
-                <marker date="1538327664792" expanded="true" signature="2217:3112" ph="/* private IEnumerator drawLinesCoroutine() ... */" />
+                <marker date="1538403096803" expanded="false" signature="6:78" ph="..." />
+                <marker date="1538403096803" expanded="true" signature="143:478" ph="{...}" />
+                <marker date="1538403096803" expanded="true" signature="251:330" ph="{...}" />
+                <marker date="1538403096803" expanded="true" signature="372:476" ph="{...}" />
               </folding>
             </state>
           </provider>
@@ -192,15 +71,15 @@
   <component name="HighlightingSettingsPerFile">
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/TargetingModule/WizardTargetDisplay.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/PatternModule/TouchPatternInput.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/TestCases/Events/DamageTestUI.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Spell.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/BossModule/HealthBarUpdater.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/StatusModule/StatusEffect.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/BossModule/BossEnemy.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/StatusModule/DamageAble.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/BossModule/BossSpell.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/Scripts/InstructionController.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/TestCases/Events/DamageTest.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/ConnectionModule/PlayerConnection.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/Scripts/InstructionControllerUI.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/ConnectionModule/MainConnectionMenuScript.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/SpellStatusDisplay.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/TimerModule/TimerController.cs" root0="FORCE_HIGHLIGHTING" />
@@ -246,8 +125,11 @@
         <option value="$PROJECT_DIR$/Assets/Scripts/TargetingModule/TargetingController.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/ConnectionModule/PlayerConnection.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/TargetingModule/WizardTargetDisplay.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/StatusModule/DamageAble.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/PatternModule/TouchPatternLines.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/StatusModule/DamageAble.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/TestCaseScripts/DamageTest.cs" />
+        <option value="$PROJECT_DIR$/Assets/TestCases/Events/DamageTestUI.cs" />
+        <option value="$PROJECT_DIR$/Assets/TestCases/Events/DamageTest.cs" />
       </list>
     </option>
   </component>
@@ -299,12 +181,6 @@
             <path>
               <item name="" type="ad4990d8:FileSystemViewPaneBase$ProjectViewPaneTreeStructure$createRoot$1" />
               <item name="GD Wizard Bois" type="483dac07:UnityExplorerNode$Root" />
-              <item name="" type="1045f7f1:UnityExplorerNode" />
-            </path>
-            <path>
-              <item name="" type="ad4990d8:FileSystemViewPaneBase$ProjectViewPaneTreeStructure$createRoot$1" />
-              <item name="GD Wizard Bois" type="483dac07:UnityExplorerNode$Root" />
-              <item name="" type="1045f7f1:UnityExplorerNode" />
               <item name="" type="1045f7f1:UnityExplorerNode" />
             </path>
             <path>
@@ -369,11 +245,12 @@
       <workItem from="1537963850740" duration="11549000" />
       <workItem from="1538033875112" duration="18360000" />
       <workItem from="1538324492564" duration="2449000" />
+      <workItem from="1538396979899" duration="4650000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="143691000" />
+    <option name="totallyTimeSpent" value="148341000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -396,7 +273,7 @@
       <window_info anchor="bottom" id="Run" order="2" />
       <window_info anchor="bottom" id="Version Control" order="13" weight="0.32905984" />
       <window_info anchor="bottom" id="Terminal" order="11" sideWeight="0.49932885" weight="0.32905984" />
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.18120806" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.18389262" />
       <window_info anchor="bottom" id="Docker" order="8" show_stripe_button="false" />
       <window_info anchor="bottom" id="Unity" order="9" weight="0.32905984" />
       <window_info anchor="right" id="Database" order="4" />
@@ -421,9 +298,6 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/Assets/TouchPatternInput.cs" />
-    <entry file="file://$PROJECT_DIR$/Assets/PlayerConnection.cs" />
-    <entry file="file://$PROJECT_DIR$/Assets/InstructionControllerUI.cs" />
     <entry file="file://$PROJECT_DIR$/Assets/TouchPatternLines.cs" />
     <entry file="file://$PROJECT_DIR$/Assets/InstructionController.cs" />
     <entry file="file://$PROJECT_DIR$/Assets/TouchPatternInput.cs" />
@@ -620,11 +494,10 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/Assets/Scripts/Wizard.cs">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="213">
+        <state relative-caret-position="1120">
           <caret line="74" column="16" selection-start-line="74" selection-start-column="16" selection-end-line="74" selection-end-column="16" />
           <folding>
             <marker date="1538044722139" expanded="false" signature="6:122" ph="..." />
-            <marker date="1538044722139" expanded="true" signature="264:3111" ph="{...}" />
             <marker date="1538044722139" expanded="true" signature="551:726" ph="{...}" />
             <marker date="1538044722139" expanded="true" signature="630:698" ph="{...}" />
             <marker date="1538044722139" expanded="true" signature="729:832" ph="/* private Spell lockedSpell = null; ... */" />
@@ -661,28 +534,63 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/Assets/Scripts/TestCaseScripts/DamageTest.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="160">
+          <caret line="12" column="67" selection-start-line="12" selection-start-column="67" selection-end-line="12" selection-end-column="67" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/Assets/Scripts/StatusModule/DamageAble.cs">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-299">
-          <caret line="43" column="8" selection-start-line="43" selection-start-column="8" selection-end-line="43" selection-end-column="8" />
+        <state relative-caret-position="128">
+          <caret line="12" column="60" selection-start-line="12" selection-start-column="60" selection-end-line="12" selection-end-column="60" />
           <folding>
-            <marker date="1538056440863" expanded="false" signature="6:134" ph="..." />
-            <marker date="1538056440863" expanded="true" signature="178:1979" ph="{...}" />
-            <marker date="1538056440863" expanded="true" signature="586:616" ph="{...}" />
-            <marker date="1538056440863" expanded="true" signature="639:705" ph="{...}" />
-            <marker date="1538056440863" expanded="true" signature="708:956" ph="/// Use this method do reduce the health. If a negative parameter is given it will be seen as healing and restore ... " />
-            <marker date="1538056440863" expanded="true" signature="992:1099" ph="{...}" />
-            <marker date="1538056440863" expanded="true" signature="1102:1144" ph="/* ... */" />
-            <marker date="1538056440863" expanded="true" signature="1197:1594" ph="{...}" />
-            <marker date="1538056440863" expanded="true" signature="1298:1472" ph="{...}" />
-            <marker date="1538056440863" expanded="true" signature="1358:1468" ph="{...}" />
-            <marker date="1538056440863" expanded="true" signature="1402:1463" ph="{...}" />
-            <marker date="1538056440863" expanded="true" signature="1479:1591" ph="{...}" />
-            <marker date="1538056440863" expanded="true" signature="1517:1558" ph="{...}" />
-            <marker date="1538056440863" expanded="true" signature="1598:1641" ph="/* ... */" />
-            <marker date="1538056440863" expanded="true" signature="1692:1762" ph="{...}" />
-            <marker date="1538056440863" expanded="true" signature="1813:1849" ph="{...}" />
-            <marker date="1538056440863" expanded="true" signature="1902:1977" ph="{...}" />
+            <marker date="1538400422967" expanded="false" signature="6:134" ph="..." />
+            <marker date="1538400422967" expanded="true" signature="178:1979" ph="{...}" />
+            <marker date="1538400422967" expanded="true" signature="586:616" ph="{...}" />
+            <marker date="1538400422967" expanded="true" signature="639:705" ph="{...}" />
+            <marker date="1538400422967" expanded="true" signature="708:956" ph="/// Use this method do reduce the health. If a negative parameter is given it will be seen as healing and restore ... " />
+            <marker date="1538400422967" expanded="true" signature="992:1099" ph="{...}" />
+            <marker date="1538400422967" expanded="true" signature="1102:1144" ph="/* ... */" />
+            <marker date="1538400422967" expanded="true" signature="1197:1594" ph="{...}" />
+            <marker date="1538400422967" expanded="true" signature="1298:1472" ph="{...}" />
+            <marker date="1538400422967" expanded="true" signature="1358:1468" ph="{...}" />
+            <marker date="1538400422967" expanded="true" signature="1402:1463" ph="{...}" />
+            <marker date="1538400422967" expanded="true" signature="1479:1591" ph="{...}" />
+            <marker date="1538400422967" expanded="true" signature="1517:1558" ph="{...}" />
+            <marker date="1538400422967" expanded="true" signature="1598:1641" ph="/* ... */" />
+            <marker date="1538400422967" expanded="true" signature="1692:1762" ph="{...}" />
+            <marker date="1538400422967" expanded="true" signature="1813:1849" ph="{...}" />
+            <marker date="1538400422967" expanded="true" signature="1902:1977" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Assets/TestCases/Events/DamageTest.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="16">
+          <caret line="4" lean-forward="true" selection-start-line="4" selection-end-line="4" />
+          <folding>
+            <marker date="1538403144523" expanded="false" signature="6:108" ph="..." />
+            <marker date="1538403144523" expanded="true" signature="152:825" ph="{...}" />
+            <marker date="1538403144523" expanded="true" signature="390:457" ph="{...}" />
+            <marker date="1538403144523" expanded="true" signature="512:543" ph="{...}" />
+            <marker date="1538403144523" expanded="true" signature="634:703" ph="{...}" />
+            <marker date="1538403144523" expanded="true" signature="797:823" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Assets/TestCases/Events/DamageTestUI.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="32">
+          <caret line="4" lean-forward="true" selection-start-line="4" selection-end-line="4" />
+          <folding>
+            <marker date="1538403096803" expanded="false" signature="6:78" ph="..." />
+            <marker date="1538403096803" expanded="true" signature="143:478" ph="{...}" />
+            <marker date="1538403096803" expanded="true" signature="251:330" ph="{...}" />
+            <marker date="1538403096803" expanded="true" signature="372:476" ph="{...}" />
           </folding>
         </state>
       </provider>
