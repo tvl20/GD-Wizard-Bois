@@ -159,7 +159,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   startButton: {fileID: 820750224}
-  maxTimeLimit: 100
+  maxTimeLimit: 5
   currentTimer: 0
   GameActive: 0
   onTimerTick:
@@ -1255,21 +1255,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   MaxHealth: 50
-  OnZeroHealthEvent:
-    m_PersistentCalls:
-      m_Calls: []
-    m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
-      Culture=neutral, PublicKeyToken=null
-  OnDamageTakenEvent:
-    m_PersistentCalls:
-      m_Calls: []
-    m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
-      Culture=neutral, PublicKeyToken=null
-  OnHealingReceivedEvent:
-    m_PersistentCalls:
-      m_Calls: []
-    m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
-      Culture=neutral, PublicKeyToken=null
 --- !u!114 &335409173
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2301,6 +2286,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e2d28297e8ff5e84292fc5c98f3babc0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  allSpells:
+  - {fileID: 11400000, guid: 695293fa3c6fb674e88a8f347c0a3edf, type: 2}
+  - {fileID: 11400000, guid: 8e7826ec5f42d944a9a8209dcd73e19e, type: 2}
+  - {fileID: 11400000, guid: 3f4b470a194cb534b89840702492db4e, type: 2}
 --- !u!120 &597011265
 LineRenderer:
   m_ObjectHideFlags: 0

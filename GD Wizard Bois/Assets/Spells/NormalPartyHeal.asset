@@ -11,7 +11,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: acb2284e37414cc4199d7629cdab500d, type: 3}
   m_Name: NormalPartyHeal
   m_EditorClassIdentifier: 
+  SpellName: PartyHeal
   StatusEffectsAppliedToTarget: []
   Damage: -5
   Type: 1
-  SpellPattern: 3
+  patternArray: 010000000200000003000000060000000900000008000000070000000400000005000000

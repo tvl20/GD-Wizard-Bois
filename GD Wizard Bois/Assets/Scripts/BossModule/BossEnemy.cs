@@ -8,6 +8,7 @@ public class BossEnemy : NetworkBehaviour
 {
     public List<BossSpell> spells;
 
+    public bool alive = true;
     public DamageAble healthScript;
 //	public HealthStatus statusScript;
 
@@ -16,6 +17,7 @@ public class BossEnemy : NetworkBehaviour
     private void Start()
     {
         healthScript = GetComponent<DamageAble>();
+        healthScript.EventOnZeroHealth += onZeroHealthHandler;
 
         if (isServer)
         {
@@ -62,5 +64,10 @@ public class BossEnemy : NetworkBehaviour
         {
             healthScript.TakeDamage(usedSpell.Damage);
         }
+    }
+
+    private void onZeroHealthHandler()
+    {
+        alive = false;
     }
 }
