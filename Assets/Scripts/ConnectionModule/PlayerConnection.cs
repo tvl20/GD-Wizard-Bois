@@ -81,6 +81,6 @@ public class PlayerConnection : NetworkBehaviour
     [ClientRpc]
     public void RpcUpdateTargeting()
     {
-        targetingController.UpdateTargetsDisplays();
+        targetingController.NewWizardConnected();
     }
 }

@@ -11,7 +11,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: acb2284e37414cc4199d7629cdab500d, type: 3}
   m_Name: NormalSingleHeal
   m_EditorClassIdentifier: 
+  SpellName: SingleHeal
   StatusEffectsAppliedToTarget: []
   Damage: -12
   Type: 0
-  SpellPattern: 2
+  patternArray: 07000000040000000100000005000000090000000600000003000000
