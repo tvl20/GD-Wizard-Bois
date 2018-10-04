@@ -1242,7 +1242,6 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 7785c7b913636c8408e3e08a43bef1b6, type: 2}
   - {fileID: 11400000, guid: 4747787782e73a04681e80e6fa010d97, type: 2}
   - {fileID: 11400000, guid: 793ec47edbc0bcb42bf02287d52686eb, type: 2}
-  alive: 1
   healthScript: {fileID: 335409172}
 --- !u!114 &335409172
 MonoBehaviour:
@@ -1256,6 +1255,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   MaxHealth: 50
+  isAlive: 1
 --- !u!114 &335409173
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2184,7 +2184,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5257909103167314dac6d714248b7411, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  HealthSource: {fileID: 0}
+  HealthSource: {fileID: 335409172}
   HealthBar: {fileID: 1648407106}
 --- !u!1 &578794634
 GameObject:
