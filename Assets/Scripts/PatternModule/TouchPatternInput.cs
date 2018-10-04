@@ -29,13 +29,8 @@ public class TouchPatternInput : MonoBehaviour
     {
         if (finishedPatternFrame) finishedPatternFrame = false;
 
-        if (Input.touchCount <= 0)
+        if ((Input.touchCount > 0 && Input.touches[0].phase == TouchPhase.Ended) || Input.GetMouseButtonUp(0))
         {
-            return;
-        }
-        else if (Input.touches[0].phase == TouchPhase.Ended)
-        {
-            Debug.Log("checking pattern");
             Spell spell = checkPatternForSpell(currentPattern.ToArray());
 
             OnFinishedSpell.Invoke(spell);
