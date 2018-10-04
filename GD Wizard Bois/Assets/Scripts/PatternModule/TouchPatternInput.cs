@@ -64,16 +64,13 @@ public class TouchPatternInput : MonoBehaviour
     {
         if (finishedPatternFrame) finishedPatternFrame = false;
 
-        if (Input.touchCount > 0 || Input.GetMouseButton(0))
+        if ((Input.touchCount > 0 && Input.touches[0].phase == TouchPhase.Ended) || Input.GetMouseButton(0))
         {
-            if (Input.touches[0].phase == TouchPhase.Ended)
-            {
-                UniquePatterns pattern = checkPattern(currentPattern.ToArray());
+            UniquePatterns pattern = checkPattern(currentPattern.ToArray());
 
-                onFinishedPattern.Invoke(pattern);
-                currentPattern.Clear();
-                finishedPatternFrame = true;
-            }
+            onFinishedPattern.Invoke(pattern);
+            currentPattern.Clear();
+            finishedPatternFrame = true;
         }
     }
 
