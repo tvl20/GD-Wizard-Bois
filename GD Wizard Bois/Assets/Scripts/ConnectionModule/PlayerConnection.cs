@@ -9,18 +9,9 @@ public class PlayerConnection : NetworkBehaviour
 
     private TargetingController targetingController;
 
-    public override void OnStartLocalPlayer()
-    {
-//        CmdSpawnLocalPlayerWizard(this.transform.position);
-    }
-
     private void Start()
     {
-//		if (!isLocalPlayer) return;
-
         targetingController = GameObject.FindGameObjectWithTag("TargetController").GetComponent<TargetingController>();
-//		Debug.Log(targetingController + " targetcontroller set");
-
 
         if (isLocalPlayer)
         {
@@ -29,29 +20,14 @@ public class PlayerConnection : NetworkBehaviour
         }
     }
 
-//	public void UseSpellOnWizards(Wizard[] targetWizards, Spell spell)
-//	{
-//
-//	}
-//
-//	public void UseSpellOnBoss(Spell spell)
-//	{
-//
-//	}
-
     ///////////////////////
     ////
-//	private GameObject myGameObject;
-
     [Command]
     private void CmdSpawnLocalPlayerWizard(Vector3 spawnPosition)
     {
         GameObject spawnedWizard =
             Instantiate(WizardPrefab, spawnPosition, Quaternion.identity, this.transform);
-//		myGameObject = spawnedWizard;
         NetworkServer.SpawnWithClientAuthority(spawnedWizard, this.gameObject);
-
-//		Debug.Log("Adding another Wizard");
 
         RpcUpdateTargeting();
     }
@@ -80,7 +56,6 @@ public class PlayerConnection : NetworkBehaviour
                 }
             }
 
-//            Debug.Log("Spell was cast");
             caster.castCooldown = true;
             caster.unlockSpell();
         }

@@ -28,13 +28,6 @@ public class Wizard : NetworkBehaviour
         return null;
     }
 
-
-//	private Spell lockedSpell = null;
-//	public Spell getLockedSpell()
-//	{
-//		return lockedSpell;
-//	}
-
     private void Awake()
     {
         healthScript = GetComponent<DamageAble>();
@@ -44,37 +37,17 @@ public class Wizard : NetworkBehaviour
     public override void OnStartAuthority()
     {
         int wizId = int.Parse(GetComponent<NetworkIdentity>().netId.ToString());
-//			Debug.Log(wizId + " will be sent to server to set ID");
         CmdSetWizardId(wizId);
 
         GameObject.FindGameObjectWithTag("Input").GetComponent<TouchPatternInput>().onFinishedPattern
             .AddListener(lockSpell);
-//			Debug.Log("input connected to wizard");
 
         GameObject.FindGameObjectWithTag("Timer").GetComponent<TimerController>().onTimerTick
             .AddListener(CmdResetCooldown);
     }
 
-//    private void Start()
-//    {
-//        if (hasAuthority)
-//        {
-//			int wizId = int.Parse(GetComponent<NetworkIdentity>().netId.ToString());
-////			Debug.Log(wizId + " will be sent to server to set ID");
-//			CmdSetWizardId(wizId);
-//
-//            GameObject.FindGameObjectWithTag("Input").GetComponent<TouchPatternInput>().onFinishedPattern
-//                .AddListener(lockSpell);
-////			Debug.Log("input connected to wizard");
-//
-//            GameObject.FindGameObjectWithTag("Timer").GetComponent<TimerController>().onTimerTick
-//                .AddListener(CmdResetCooldown);
-//        }
-//    }
-
     public void unlockSpell()
     {
-//		lockedSpell = null;
         CmdLockSpell(-1);
     }
 
