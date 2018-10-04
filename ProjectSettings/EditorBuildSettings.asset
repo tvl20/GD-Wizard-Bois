@@ -6,9 +6,9 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/Scenes/MultiplayerPatternDemo/MultiplayerPatternMainscreenDemo.unity
-    guid: 0fce5273cb616624abba30744e4574d2
+    path: Assets/Scenes/Teun_LaunchScreen.unity
+    guid: 6fd57506fdbe0de4e8d36be3993ed380
   - enabled: 1
-    path: Assets/Scenes/MultiplayerPatternDemo/MultiplayerPatternDemo.unity
-    guid: 99c9720ab356a0642a771bea13969a05
+    path: Assets/Scenes/Teun_Combat.unity
+    guid: 2d0503efe4da75246b9396b5f0de857c
   m_configObjects: {}
