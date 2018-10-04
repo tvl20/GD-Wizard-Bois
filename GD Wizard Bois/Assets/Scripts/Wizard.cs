@@ -39,7 +39,7 @@ public class Wizard : NetworkBehaviour
         int wizId = int.Parse(GetComponent<NetworkIdentity>().netId.ToString());
         CmdSetWizardId(wizId);
 
-        GameObject.FindGameObjectWithTag("Input").GetComponent<TouchPatternInput>().onFinishedPattern
+        GameObject.FindGameObjectWithTag("Input").GetComponent<TouchPatternInput>().OnFinishedSpell
             .AddListener(lockSpell);
 
         GameObject.FindGameObjectWithTag("Timer").GetComponent<TimerController>().onTimerTick
@@ -51,17 +51,16 @@ public class Wizard : NetworkBehaviour
         CmdLockSpell(-1);
     }
 
-    private void lockSpell(TouchPatternInput.UniquePatterns spellPattern)
+    private void lockSpell(Spell spell)
     {
-        if (castCooldown || spellPattern == TouchPatternInput.UniquePatterns.None) return;
+        if (castCooldown || spell == null) return;
 
 
         int spellIndex = -1;
         for (int i = 0; i < SpellBook.Count; i++)
         {
-            if (SpellBook[i].SpellPattern == spellPattern)
+            if (SpellBook[i].Equals(spell))
             {
-//				lockedSpell = spell;
                 spellIndex = i;
                 break;
             }

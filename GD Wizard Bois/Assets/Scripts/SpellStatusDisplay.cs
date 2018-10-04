@@ -31,7 +31,7 @@ public class SpellStatusDisplay : MonoBehaviour
 				}
 				else
 				{
-					textField.text = lockedSpell.SpellPattern.ToString();
+					textField.text = lockedSpell.SpellName;
 				}
 			}
 		}

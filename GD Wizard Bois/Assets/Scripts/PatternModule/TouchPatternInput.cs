@@ -5,7 +5,7 @@ using UnityEngine;
 using UnityEngine.Events;
 using UnityEngine.EventSystems;
 
-public class PatternUnityEvent : UnityEvent<TouchPatternInput.UniquePatterns>
+public class SpellUnityEvent : UnityEvent<Spell>
 {
 }
 
@@ -15,41 +15,10 @@ public class NodeAddedEvent : UnityEvent<int>
 
 public class TouchPatternInput : MonoBehaviour
 {
-    public PatternUnityEvent onFinishedPattern = new PatternUnityEvent();
+    public SpellUnityEvent OnFinishedSpell = new SpellUnityEvent();
     public NodeAddedEvent onNodeAddedToPattern = new NodeAddedEvent();
 
-    public enum UniquePatterns
-    {
-        None,
-        Attack,
-        Heal,
-        PartyHeal
-    }
-
-    private class Pattern
-    {
-        public readonly UniquePatterns UniquePattern;
-        private readonly int[] PatternArray;
-
-        public Pattern(UniquePatterns uniquePattern, int[] patternArray)
-        {
-            UniquePattern = uniquePattern;
-            PatternArray = patternArray;
-        }
-
-        public bool PatternArrayMatches(int[] otherPatternArray)
-        {
-            if (otherPatternArray == null) return false;
-            return PatternArray.SequenceEqual(otherPatternArray);
-        }
-    }
-
-    private readonly List<Pattern> knownPatterns = new List<Pattern>()
-    {
-        {new Pattern(UniquePatterns.Attack, new int[] {1, 2, 3, 5, 7, 8, 9})},
-        {new Pattern(UniquePatterns.Heal, new int[] {7, 4, 1, 5, 9, 6, 3})},
-        {new Pattern(UniquePatterns.PartyHeal, new int[] {1, 2, 3, 6, 9, 8, 7, 4, 5})}
-    };
+    [SerializeField] private List<Spell> allSpells;
 
     private List<int> currentPattern;
 
@@ -66,9 +35,9 @@ public class TouchPatternInput : MonoBehaviour
 
         if ((Input.touchCount > 0 && Input.touches[0].phase == TouchPhase.Ended) || Input.GetMouseButton(0))
         {
-            UniquePatterns pattern = checkPattern(currentPattern.ToArray());
+            Spell spell = checkPatternForSpell(currentPattern.ToArray());
 
-            onFinishedPattern.Invoke(pattern);
+            OnFinishedSpell.Invoke(spell);
             currentPattern.Clear();
             finishedPatternFrame = true;
         }
@@ -80,21 +49,20 @@ public class TouchPatternInput : MonoBehaviour
         {
             currentPattern.Add(node);
             onNodeAddedToPattern.Invoke(node);
-//			Debug.Log(node + " , added to the current pattern");
         }
     }
 
-    private UniquePatterns checkPattern(int[] numberSequence)
+    private Spell checkPatternForSpell(int[] numberSequence)
     {
-        for (var i = 0; i < knownPatterns.Count; i++)
+        for (var i = 0; i < allSpells.Count; i++)
         {
-            Pattern knownPattern = knownPatterns[i];
-            if (knownPattern.PatternArrayMatches(numberSequence))
+            Spell knownSpell = allSpells[i];
+            if (knownSpell.PatternArrayMatches(numberSequence))
             {
-                return knownPattern.UniquePattern;
+                return knownSpell;
             }
         }
 
-        return UniquePatterns.None;
+        return null;
     }
 }
