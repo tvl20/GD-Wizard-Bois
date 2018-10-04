@@ -10,7 +10,6 @@ public class MainConnectionMenuScript : MonoBehaviour
 
     public void HostGame()
     {
-        Debug.Log("REEEEE");
         NetworkManager.singleton.networkPort = 7777;
         NetworkManager.singleton.StartHost();
     }
