@@ -52,11 +52,6 @@ public class TouchPatternInput : MonoBehaviour
     };
 
     private List<int> currentPattern;
-//	public List<int> getCurrentPattern()
-//	{
-//		//return a copy of the list
-//		return new List<int>(currentPattern);
-//	}
 
     private bool finishedPatternFrame = false;
 
@@ -68,25 +63,17 @@ public class TouchPatternInput : MonoBehaviour
     private void Update()
     {
         if (finishedPatternFrame) finishedPatternFrame = false;
-//        if (Input.touchCount <= 0) return;
 
-//        if (Input.touches[0].phase == TouchPhase.Ended)
-        if(Input.GetMouseButtonUp(0))
+        if (Input.touchCount > 0 || Input.GetMouseButton(0))
         {
-            UniquePatterns pattern = checkPattern(currentPattern.ToArray());
-//            Debug.Log(pattern);
+            if (Input.touches[0].phase == TouchPhase.Ended)
+            {
+                UniquePatterns pattern = checkPattern(currentPattern.ToArray());
 
-//            string output = "";
-//            foreach (int i in currentPattern)
-//            {
-//                output += i + ", ";
-//            }
-//
-//            Debug.Log(output);
-
-            onFinishedPattern.Invoke(pattern);
-            currentPattern.Clear();
-            finishedPatternFrame = true;
+                onFinishedPattern.Invoke(pattern);
+                currentPattern.Clear();
+                finishedPatternFrame = true;
+            }
         }
     }
 
