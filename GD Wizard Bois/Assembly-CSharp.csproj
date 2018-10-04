@@ -60,6 +60,7 @@
     <Compile Include="Assets\Scripts\BossModule\HealthBarUpdater.cs" />
     <Compile Include="Assets\Scripts\ConnectionModule\MainConnectionMenuScript.cs" />
     <Compile Include="Assets\Scripts\ConnectionModule\PlayerConnection.cs" />
+    <Compile Include="Assets\Scripts\GameController.cs" />
     <Compile Include="Assets\Scripts\PatternModule\TouchPatternInput.cs" />
     <Compile Include="Assets\Scripts\PatternModule\TouchPatternLines.cs" />
     <Compile Include="Assets\Scripts\Spell.cs" />

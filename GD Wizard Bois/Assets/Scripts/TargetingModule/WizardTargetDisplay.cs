@@ -27,6 +27,12 @@ public class WizardTargetDisplay : MonoBehaviour
 
 	public void SetTarget(Wizard target)
 	{
+		if (targetWizard != null)
+		{
+			targetWizard.healthScript.EventOnTakeDamage -= onHealthUpdate;
+			targetWizard.healthScript.EventOnHealingReceived -= onHealthUpdate;
+		}
+
 		targetWizard = target;
 
 		if (targetWizard == null)
@@ -71,5 +77,12 @@ public class WizardTargetDisplay : MonoBehaviour
 		Debug.Log("Health Update");
 		float sliderValue = (float) targetWizard.healthScript.GetCurrentHealth() / targetWizard.healthScript.MaxHealth;
 		healthSlider.value = sliderValue;
+
+		if (sliderValue <= 0) onWizardDeath();
+	}
+
+	private void onWizardDeath()
+	{
+		targetButton.interactable = false;
 	}
 }
