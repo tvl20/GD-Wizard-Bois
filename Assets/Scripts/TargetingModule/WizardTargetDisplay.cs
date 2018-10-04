@@ -14,6 +14,7 @@ public class WizardTargetDisplay : MonoBehaviour
 
 	[SerializeField] private Button targetButton;
 	[SerializeField] private Text targetButtonText;
+	[SerializeField] private Text targetNameText;
 	[SerializeField] private Slider healthSlider;
 
 	private void Start ()
@@ -55,10 +56,12 @@ public class WizardTargetDisplay : MonoBehaviour
 			if (targetWizard.hasAuthority)
 			{
 				targetButtonText.text = "Self";
+				targetNameText.text = "Self";
 			}
 			else
 			{
 				targetButtonText.text = "Wizard " + targetWizard.WizardId;
+				targetNameText.text = "Wizard " + targetWizard.WizardId;
 			}
 
 			healthSlider.gameObject.SetActive(true);
@@ -74,7 +77,7 @@ public class WizardTargetDisplay : MonoBehaviour
 
 	private void onHealthUpdate(int change)
 	{
-		Debug.Log("Health Update");
+//		Debug.Log("Health Update");
 		float sliderValue = (float) targetWizard.healthScript.GetCurrentHealth() / targetWizard.healthScript.MaxHealth;
 		healthSlider.value = sliderValue;
 
