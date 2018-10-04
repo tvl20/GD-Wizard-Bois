@@ -4,7 +4,6 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Networking;
 
-//[RequireComponent(typeof(DamageAble), typeof(HealthStatus))]
 [RequireComponent(typeof(DamageAble))]
 public class Wizard : NetworkBehaviour
 {
