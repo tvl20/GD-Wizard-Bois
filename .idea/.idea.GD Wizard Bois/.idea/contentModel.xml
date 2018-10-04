@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ContentModelStore">
+    <e p="C:\Users\Teun van Laarhoven\.Rider2018.1\system\resharper-host\Local\Transient\ReSharperHost\v12\SolutionCaches\_GD Wizard Bois.-769008686.00" t="ExcludeRecursive" />
+    <e p="C:\Users\Teun van Laarhoven\Desktop\ICT HW\Semester 4.5 GD\GD-Wizard-Bois\GD Wizard Bois" t="IncludeRecursive">
+      <e p="Assembly-CSharp.csproj" t="IncludeRecursive" />
+      <e p="Assets" t="Include">
+        <e p="Scripts" t="Include">
+          <e p="BossModule" t="Include">
+            <e p="BossEnemy.cs" t="Include" />
+            <e p="BossSpell.cs" t="Include" />
+            <e p="HealthBarUpdater.cs" t="Include" />
+          </e>
+          <e p="ConnectionModule" t="Include">
+            <e p="MainConnectionMenuScript.cs" t="Include" />
+            <e p="PlayerConnection.cs" t="Include" />
+          </e>
+          <e p="GameController.cs" t="Include" />
+          <e p="PatternModule" t="Include">
+            <e p="TouchPatternInput.cs" t="Include" />
+            <e p="TouchPatternLines.cs" t="Include" />
+          </e>
+          <e p="Spell.cs" t="Include" />
+          <e p="SpellStatusDisplay.cs" t="Include" />
+          <e p="StatusModule" t="Include">
+            <e p="DamageAble.cs" t="Include" />
+            <e p="HealthStatus.cs" t="Include" />
+            <e p="StatusEffect.cs" t="Include" />
+          </e>
+          <e p="TargetingModule" t="Include">
+            <e p="TargetingController.cs" t="Include" />
+            <e p="WizardTargetDisplay.cs" t="Include" />
+          </e>
+          <e p="TimerModule" t="Include">
+            <e p="TimerController.cs" t="Include" />
+            <e p="TimerUI.cs" t="Include" />
+          </e>
+          <e p="Wizard.cs" t="Include" />
+        </e>
+        <e p="TestCases" t="Include">
+          <e p="Events" t="Include">
+            <e p="DamageTest.cs" t="Include" />
+            <e p="DamageTestUI.cs" t="Include" />
+          </e>
+          <e p="PatternSyncing" t="Include">
+            <e p="InstructionController.cs" t="Include" />
+            <e p="InstructionControllerUI.cs" t="Include" />
+          </e>
+        </e>
+      </e>
+      <e p="GD Wizard Bois.sln" t="IncludeFlat" />
+      <e p="Library" t="ExcludeRecursive" />
+      <e p="obj" t="ExcludeRecursive" />
+      <e p="packages" t="ExcludeRecursive" />
+      <e p="Temp" t="ExcludeRecursive">
+        <e p="bin" t="ExcludeRecursive" />
+      </e>
+    </e>
+  </component>
+</project>

@@ -5,6 +5,11 @@ TagManager:
   serializedVersion: 2
   tags:
   - InstructionController
+  - Timer
+  - Input
+  - TargetController
+  - Wizard
+  - SpellStatus
   layers:
   - Default
   - TransparentFX
