@@ -1218,8 +1218,8 @@ GameObject:
   m_Component:
   - component: {fileID: 335409174}
   - component: {fileID: 335409173}
-  - component: {fileID: 335409172}
   - component: {fileID: 335409171}
+  - component: {fileID: 335409172}
   m_Layer: 0
   m_Name: Boss
   m_TagString: Untagged
@@ -2184,7 +2184,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5257909103167314dac6d714248b7411, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  HealthSource: {fileID: 335409172}
+  HealthSource: {fileID: 0}
   HealthBar: {fileID: 1648407106}
 --- !u!1 &578794634
 GameObject:

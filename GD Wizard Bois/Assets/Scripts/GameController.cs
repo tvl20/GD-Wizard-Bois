@@ -44,11 +44,11 @@ public class GameController : NetworkBehaviour
 		bool winConditionMet = false;
 		bool loseConditionMet = true;
 
-		winConditionMet = !targetingController.boss.alive;
+		winConditionMet = !targetingController.boss.healthScript.isAlive;
 
 		foreach (Wizard wizard in allWizards)
 		{
-			if (wizard.alive)
+			if (wizard.healthScript.isAlive)
 			{
 				loseConditionMet = false;
 				break;

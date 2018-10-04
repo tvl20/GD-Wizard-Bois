@@ -13,7 +13,6 @@ public class Wizard : NetworkBehaviour
     [SyncVar] public int WizardId;
     [SyncVar] public bool castCooldown = false;
 
-    public bool alive = true;
     public DamageAble healthScript;
 //	private HealthStatus statusEffectsScript;
 
@@ -32,7 +31,6 @@ public class Wizard : NetworkBehaviour
     private void Awake()
     {
         healthScript = GetComponent<DamageAble>();
-        healthScript.EventOnZeroHealth += onZeroHealthHandler;
     }
 
     // Start is executed before authority is given to this gameobject
@@ -70,11 +68,6 @@ public class Wizard : NetworkBehaviour
 
         if (spellIndex > -1)
             CmdLockSpell(spellIndex);
-    }
-
-    private void onZeroHealthHandler()
-    {
-        alive = false;
     }
 
     //////////////////////
