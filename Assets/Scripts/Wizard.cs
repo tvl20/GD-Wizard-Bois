@@ -42,7 +42,7 @@ public class Wizard : NetworkBehaviour
             .AddListener(lockSpell);
 
         GameObject.FindGameObjectWithTag("Timer").GetComponent<TimerController>().onTimerTick
-            .AddListener(CmdResetCooldown);
+            .AddListener(resetCooldown);
     }
 
     public void unlockSpell()
@@ -67,6 +67,11 @@ public class Wizard : NetworkBehaviour
 
         if (spellIndex > -1)
             CmdLockSpell(spellIndex);
+    }
+
+    private void resetCooldown()
+    {
+        CmdResetCooldown();
     }
 
     //////////////////////

@@ -45,6 +45,7 @@ public class PlayerConnection : NetworkBehaviour
             if (spell.Type == Spell.TargetType.Single)
             {
                 Wizard target = targetingController.GetWizardById(targetIds[0]);
+
                 target.healthScript.TakeDamage(spell.Damage);
             }
             else if (spell.Type == Spell.TargetType.Party)

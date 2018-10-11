@@ -10,7 +10,6 @@ public class TargetingController : NetworkBehaviour
 {
     public UnityEvent onNewWizardConnected = new UnityEvent();
 
-    public Button bossTargetButton;
     public BossEnemy boss;
 
     public WizardTargetDisplay[] TargetDisplays;
