@@ -15,16 +15,21 @@ public class Wizard : NetworkBehaviour
     public DamageAble healthScript;
 //	private HealthStatus statusEffectsScript;
 
-    [SyncVar] private int lockedSpellIndex = -1;
+//    [SyncVar] private int lockedSpellIndex = -1;
+//    public Spell getLockedSpell()
+//    {
+//        if (lockedSpellIndex > -1 && lockedSpellIndex < SpellBook.Count)
+//        {
+//            return SpellBook[lockedSpellIndex];
+//        }
+//
+//        return null;
+//    }
 
-    public Spell getLockedSpell()
+    private PlayerConnection playerObject;
+    public void SetPlayerObject(PlayerConnection obj)
     {
-        if (lockedSpellIndex > -1 && lockedSpellIndex < SpellBook.Count)
-        {
-            return SpellBook[lockedSpellIndex];
-        }
-
-        return null;
+        playerObject = obj;
     }
 
     private void Awake()
@@ -39,18 +44,18 @@ public class Wizard : NetworkBehaviour
         CmdSetWizardId(wizId);
 
         GameObject.FindGameObjectWithTag("Input").GetComponent<TouchPatternInput>().OnFinishedSpell
-            .AddListener(lockSpell);
+            .AddListener(castSpell);
 
         GameObject.FindGameObjectWithTag("Timer").GetComponent<TimerController>().onTimerTick
             .AddListener(resetCooldown);
     }
 
-    public void unlockSpell()
-    {
-        CmdLockSpell(-1);
-    }
+//    public void unlockSpell()
+//    {
+//        CmdLockSpell(-1);
+//    }
 
-    private void lockSpell(Spell spell)
+    private void castSpell(Spell spell)
     {
         if (castCooldown || spell == null) return;
 
@@ -66,7 +71,8 @@ public class Wizard : NetworkBehaviour
         }
 
         if (spellIndex > -1)
-            CmdLockSpell(spellIndex);
+            playerObject.CastSpell(spellIndex);
+//            CmdLockSpell(spellIndex);
     }
 
     private void resetCooldown()
@@ -82,11 +88,11 @@ public class Wizard : NetworkBehaviour
         this.WizardId = id;
     }
 
-    [Command]
-    private void CmdLockSpell(int spellIndex)
-    {
-        lockedSpellIndex = spellIndex;
-    }
+//    [Command]
+//    private void CmdLockSpell(int spellIndex)
+//    {
+//        lockedSpellIndex = spellIndex;
+//    }
 
     [Command]
     private void CmdResetCooldown()

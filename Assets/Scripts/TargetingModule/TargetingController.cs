@@ -9,9 +9,7 @@ using UnityEngine.UI;
 public class TargetingController : NetworkBehaviour
 {
     public UnityEvent onNewWizardConnected = new UnityEvent();
-
     public BossEnemy boss;
-
     public WizardTargetDisplay[] TargetDisplays;
 
     // The Wizard object of the localplayer will always be at position [0]
@@ -19,6 +17,15 @@ public class TargetingController : NetworkBehaviour
     public Wizard[] GetAllWizards()
     {
         return allWizards;
+    }
+
+    // TODO: FIND A BETTER WAY TO DO THIS
+    // This is the ID of the target
+    // this will be -1 if the boss is the selected target (default)
+    private int targetId = -1;
+    public int GetTargetId()
+    {
+        return targetId;
     }
 
     private PlayerConnection playerConnectionObject;
@@ -52,17 +59,21 @@ public class TargetingController : NetworkBehaviour
         return null;
     }
 
-    public void onBossTargetSelected()
+    public int[] GetAllWizardIds()
     {
-        if (allWizards[0].getLockedSpell() != null && !allWizards[0].castCooldown)
+        int[] wizIds = new int[allWizards.Length];
+
+        for (var i = 0; i < allWizards.Length; i++)
         {
-            playerConnectionObject.CmdWizardUseSpellOnBoss(allWizards[0].WizardId);
+            wizIds[i] = allWizards[i].WizardId;
         }
+
+        return wizIds;
     }
 
     private void UpdateTargetsDisplays()
     {
-        SpellStatusDisplay spellStatusDisplay = GameObject.FindGameObjectWithTag("SpellStatus").GetComponent<SpellStatusDisplay>();
+//        SpellStatusDisplay spellStatusDisplay = GameObject.FindGameObjectWithTag("SpellStatus").GetComponent<SpellStatusDisplay>();
         GameObject[] wizards = GameObject.FindGameObjectsWithTag("Wizard");
 
         allWizards = new Wizard[wizards.Length];
@@ -75,7 +86,7 @@ public class TargetingController : NetworkBehaviour
             {
                 TargetDisplays[0].SetTarget(wizScript);
                 allWizards[0] = wizScript;
-                spellStatusDisplay.wizardWithStatus = allWizards[0];
+//                spellStatusDisplay.wizardWithStatus = allWizards[0];
                 j--;
             }
             else
@@ -86,27 +97,39 @@ public class TargetingController : NetworkBehaviour
         }
     }
 
+    public void onBossTargetSelected()
+    {
+        targetId = -1;
+
+//        if (allWizards[0].getLockedSpell() != null && !allWizards[0].castCooldown)
+//        {
+//            playerConnectionObject.CmdWizardUseSpellOnBoss(allWizards[0].WizardId);
+//        }
+    }
+
     private void onWizardTargetSelected(int wizId)
     {
-        Spell lockedSpell = allWizards[0].getLockedSpell();
+        targetId = wizId;
 
-        if (lockedSpell != null && !allWizards[0].castCooldown)
-        {
-            if (lockedSpell.Type == Spell.TargetType.Party)
-            {
-                int[] wizIds = new int[allWizards.Length];
-
-                for (var i = 0; i < allWizards.Length; i++)
-                {
-                    wizIds[i] = allWizards[i].WizardId;
-                }
-
-                playerConnectionObject.CmdWizardUseSpellOnWizards(wizIds, allWizards[0].WizardId);
-            }
-            else if (lockedSpell.Type == Spell.TargetType.Single)
-            {
-                playerConnectionObject.CmdWizardUseSpellOnWizards(new int[] {wizId}, allWizards[0].WizardId);
-            }
-        }
+//        Spell lockedSpell = allWizards[0].getLockedSpell();
+//
+//        if (lockedSpell != null && !allWizards[0].castCooldown)
+//        {
+//            if (lockedSpell.Type == Spell.TargetType.Party)
+//            {
+//                int[] wizIds = new int[allWizards.Length];
+//
+//                for (var i = 0; i < allWizards.Length; i++)
+//                {
+//                    wizIds[i] = allWizards[i].WizardId;
+//                }
+//
+//                playerConnectionObject.CmdWizardUseSpellOnWizards(wizIds, allWizards[0].WizardId);
+//            }
+//            else if (lockedSpell.Type == Spell.TargetType.Single)
+//            {
+//                playerConnectionObject.CmdWizardUseSpellOnWizards(new int[] {wizId}, allWizards[0].WizardId);
+//            }
+//        }
     }
 }

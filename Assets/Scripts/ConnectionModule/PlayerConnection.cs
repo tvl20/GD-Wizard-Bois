@@ -8,6 +8,7 @@ public class PlayerConnection : NetworkBehaviour
     public GameObject WizardPrefab;
 
     private TargetingController targetingController;
+    private Wizard myWiz;
 
     private void Start()
     {
@@ -18,6 +19,27 @@ public class PlayerConnection : NetworkBehaviour
             targetingController.setPlayerConnectionObject(this);
             CmdSpawnLocalPlayerWizard(this.transform.position);
         }
+    }
+
+    public void CastSpell(int spellIndex)
+    {
+        if (myWiz.castCooldown || spellIndex < 0) return;
+        if (targetingController.GetTargetId() == -1)
+        {
+            CmdWizardUseSpellOnBoss(myWiz.WizardId, spellIndex);
+        }
+        else
+        {
+            if (myWiz.SpellBook[spellIndex].Type == Spell.TargetType.Party)
+            {
+                CmdWizardUseSpellOnWizards(targetingController.GetAllWizardIds(), myWiz.WizardId, spellIndex);
+            }
+            else
+            {
+                CmdWizardUseSpellOnWizards(new int[] {targetingController.GetTargetId()}, myWiz.WizardId, spellIndex);
+            }
+        }
+
     }
 
     ///////////////////////
@@ -33,10 +55,11 @@ public class PlayerConnection : NetworkBehaviour
     }
 
     [Command]
-    public void CmdWizardUseSpellOnWizards(int[] targetIds, int casterId)
+    public void CmdWizardUseSpellOnWizards(int[] targetIds, int casterId, int spellIndex)
     {
         Wizard caster = targetingController.GetWizardById(casterId);
-        Spell spell = caster.getLockedSpell();
+//        Spell spell = caster.getLockedSpell();
+        Spell spell = caster.SpellBook[spellIndex];
 
         // TODO: organise this code
         // TODO: apply status effects
@@ -58,22 +81,23 @@ public class PlayerConnection : NetworkBehaviour
             }
 
             caster.castCooldown = true;
-            caster.unlockSpell();
+//            caster.unlockSpell();
         }
     }
 
     [Command]
-    public void CmdWizardUseSpellOnBoss(int casterId)
+    public void CmdWizardUseSpellOnBoss(int casterId, int spellIndex)
     {
         Wizard caster = targetingController.GetWizardById(casterId);
-        Spell spell = caster.getLockedSpell();
+//        Spell spell = caster.getLockedSpell();
+        Spell spell = caster.SpellBook[spellIndex];
 
         if (spell != null && !caster.castCooldown)
         {
             targetingController.boss.healthScript.TakeDamage(spell.Damage);
 
             caster.castCooldown = true;
-            caster.unlockSpell();
+//            caster.unlockSpell();
         }
     }
 
@@ -83,5 +107,8 @@ public class PlayerConnection : NetworkBehaviour
     public void RpcUpdateTargeting()
     {
         targetingController.NewWizardConnected();
+        myWiz = targetingController.GetAllWizards()[0];
+//        Debug.Log(myWiz);
+        myWiz.SetPlayerObject(this);
     }
 }

@@ -40,7 +40,7 @@ GameObject:
   - component: {fileID: 222881204200659616}
   - component: {fileID: 114308223798078594}
   m_Layer: 5
-  m_Name: PatternImage
+  m_Name: SpellbookPage
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -111,14 +111,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6d3d3a3f03bbeb1449726a707c3077c3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  detectSwipeOnlyAfterRelease: 1
-  spellPatterns:
+  SWIPE_THRESHOLD: 20
+  DetectSwipeOnlyAfterRelease: 0
+  LoopSpellBook: 1
+  SpellPatterns:
   - {fileID: 21300000, guid: d502632e3ccc7ee42988a86811004934, type: 3}
   - {fileID: 21300000, guid: 043a647b0614b894ba63cc6888b7dd7a, type: 3}
   - {fileID: 21300000, guid: b1d78982d66c4714380a7620ed76b754, type: 3}
-  spellBookPage: {fileID: 114308223798078594}
-  spellBook: {fileID: 224466791741033696}
-  SWIPE_THRESHOLD: 20
+  SpellBookPage: {fileID: 114308223798078594}
 --- !u!222 &222004805860896540
 CanvasRenderer:
   m_ObjectHideFlags: 1
