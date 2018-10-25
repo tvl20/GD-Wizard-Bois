@@ -29,7 +29,6 @@ public class TimerController : NetworkBehaviour
 			if (currentTimer <= 0)
 			{
 				currentTimer = 0;
-//                Debug.Log("RESETTING TIMER");
 
 				if (!isServer) return;
 				RpcResetTimer();

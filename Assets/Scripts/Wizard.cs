@@ -4,7 +4,6 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Networking;
 
-//[RequireComponent(typeof(DamageAble), typeof(HealthStatus))]
 [RequireComponent(typeof(DamageAble))]
 public class Wizard : NetworkBehaviour
 {
@@ -39,11 +38,11 @@ public class Wizard : NetworkBehaviour
         int wizId = int.Parse(GetComponent<NetworkIdentity>().netId.ToString());
         CmdSetWizardId(wizId);
 
-        GameObject.FindGameObjectWithTag("Input").GetComponent<TouchPatternInput>().onFinishedPattern
+        GameObject.FindGameObjectWithTag("Input").GetComponent<TouchPatternInput>().OnFinishedSpell
             .AddListener(lockSpell);
 
         GameObject.FindGameObjectWithTag("Timer").GetComponent<TimerController>().onTimerTick
-            .AddListener(CmdResetCooldown);
+            .AddListener(resetCooldown);
     }
 
     public void unlockSpell()
@@ -51,17 +50,16 @@ public class Wizard : NetworkBehaviour
         CmdLockSpell(-1);
     }
 
-    private void lockSpell(TouchPatternInput.UniquePatterns spellPattern)
+    private void lockSpell(Spell spell)
     {
-        if (castCooldown || spellPattern == TouchPatternInput.UniquePatterns.None) return;
+        if (castCooldown || spell == null) return;
 
 
         int spellIndex = -1;
         for (int i = 0; i < SpellBook.Count; i++)
         {
-            if (SpellBook[i].SpellPattern == spellPattern)
+            if (SpellBook[i].Equals(spell))
             {
-//				lockedSpell = spell;
                 spellIndex = i;
                 break;
             }
@@ -69,6 +67,11 @@ public class Wizard : NetworkBehaviour
 
         if (spellIndex > -1)
             CmdLockSpell(spellIndex);
+    }
+
+    private void resetCooldown()
+    {
+        CmdResetCooldown();
     }
 
     //////////////////////

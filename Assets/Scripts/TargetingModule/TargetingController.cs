@@ -2,18 +2,24 @@
 using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
+using UnityEngine.Events;
 using UnityEngine.Networking;
 using UnityEngine.UI;
 
 public class TargetingController : NetworkBehaviour
 {
-    public Button bossTargetButton;
+    public UnityEvent onNewWizardConnected = new UnityEvent();
+
     public BossEnemy boss;
 
     public WizardTargetDisplay[] TargetDisplays;
 
     // The Wizard object of the localplayer will always be at position [0]
     private Wizard[] allWizards;
+    public Wizard[] GetAllWizards()
+    {
+        return allWizards;
+    }
 
     private PlayerConnection playerConnectionObject;
 
@@ -30,7 +36,31 @@ public class TargetingController : NetworkBehaviour
         }
     }
 
-    public void UpdateTargetsDisplays()
+    public void NewWizardConnected()
+    {
+        UpdateTargetsDisplays();
+        onNewWizardConnected.Invoke();
+    }
+
+    public Wizard GetWizardById(int id)
+    {
+        foreach (Wizard wizard in allWizards)
+        {
+            if (wizard.WizardId == id) return wizard;
+        }
+
+        return null;
+    }
+
+    public void onBossTargetSelected()
+    {
+        if (allWizards[0].getLockedSpell() != null && !allWizards[0].castCooldown)
+        {
+            playerConnectionObject.CmdWizardUseSpellOnBoss(allWizards[0].WizardId);
+        }
+    }
+
+    private void UpdateTargetsDisplays()
     {
         SpellStatusDisplay spellStatusDisplay = GameObject.FindGameObjectWithTag("SpellStatus").GetComponent<SpellStatusDisplay>();
         GameObject[] wizards = GameObject.FindGameObjectsWithTag("Wizard");
@@ -53,24 +83,6 @@ public class TargetingController : NetworkBehaviour
                 TargetDisplays[j].SetTarget(wizScript);
                 allWizards[j] = wizScript;
             }
-        }
-    }
-
-    public Wizard GetWizardById(int id)
-    {
-        foreach (Wizard wizard in allWizards)
-        {
-            if (wizard.WizardId == id) return wizard;
-        }
-
-        return null;
-    }
-
-    public void onBossTargetSelected()
-    {
-        if (allWizards[0].getLockedSpell() != null && !allWizards[0].castCooldown)
-        {
-            playerConnectionObject.CmdWizardUseSpellOnBoss(allWizards[0].WizardId);
         }
     }
 

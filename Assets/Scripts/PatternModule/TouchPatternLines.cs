@@ -17,7 +17,7 @@ public class TouchPatternLines : MonoBehaviour
         mainCamera = Camera.main;
 
         touchInput = GetComponent<TouchPatternInput>();
-        touchInput.onFinishedPattern.AddListener(clearLines);
+        touchInput.OnFinishedSpell.AddListener(clearLines);
         touchInput.onNodeAddedToPattern.AddListener(connectLine);
 
         line = GetComponent<LineRenderer>();
@@ -35,9 +35,9 @@ public class TouchPatternLines : MonoBehaviour
         line.SetPosition(line.positionCount - 1, newPosition);
     }
 
-    private void clearLines(TouchPatternInput.UniquePatterns pattern)
+    private void clearLines(Spell spell)
     {
-        if (pattern == TouchPatternInput.UniquePatterns.None)
+        if (spell == null)
         {
             // TODO: add unique "poof" effect?
         }

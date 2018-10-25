@@ -11,7 +11,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: acb2284e37414cc4199d7629cdab500d, type: 3}
   m_Name: NormalAttack
   m_EditorClassIdentifier: 
+  SpellName: SingleAttack
   StatusEffectsAppliedToTarget: []
   Damage: 10
   Type: 0
-  SpellPattern: 1
+  patternArray: 01000000020000000300000005000000070000000800000009000000

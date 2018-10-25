@@ -22,7 +22,7 @@ public class DamageAble : NetworkBehaviour
 	public delegate void EventZeroHealthDelegate();
 	[SyncEvent] public event EventZeroHealthDelegate EventOnZeroHealth;
 
-	private bool alive = true;
+	public bool isAlive = true;
 
 	private int currentHealth;
 
@@ -46,7 +46,7 @@ public class DamageAble : NetworkBehaviour
 	/// <param name="amount">amount of damade taken, if negative it will be seen as healing</param>
 	public void TakeDamage(int amount)
 	{
-		if (!alive) return;
+		if (!isAlive) return;
 //		Debug.Log("CLIENT - taking damage: " + amount);
 		CmdChangeHealth(amount);
 	}
@@ -71,7 +71,7 @@ public class DamageAble : NetworkBehaviour
 
 	private void onZeroHealth()
 	{
-		alive = false;
+		isAlive = false;
 	}
 
 	////////////////////////////////////
@@ -88,7 +88,7 @@ public class DamageAble : NetworkBehaviour
 
 			if (currentHealth - amount <= 0)
 			{
-				if (alive)
+				if (isAlive)
 				{
 					if (EventOnZeroHealth != null)
 					{
