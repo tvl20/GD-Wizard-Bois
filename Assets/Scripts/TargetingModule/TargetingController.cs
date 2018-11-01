@@ -105,6 +105,8 @@ public class TargetingController : NetworkBehaviour
 //        {
 //            playerConnectionObject.CmdWizardUseSpellOnBoss(allWizards[0].WizardId);
 //        }
+
+        // TODO: PUT TARGET MARKER OVER BOSS
     }
 
     private void onWizardTargetSelected(int wizId)
@@ -131,5 +133,7 @@ public class TargetingController : NetworkBehaviour
 //                playerConnectionObject.CmdWizardUseSpellOnWizards(new int[] {wizId}, allWizards[0].WizardId);
 //            }
 //        }
+
+        // TODO: PUT TARGET MARKER OVER WIZARD
     }
 }

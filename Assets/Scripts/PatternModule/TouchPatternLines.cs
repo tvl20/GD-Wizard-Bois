@@ -12,6 +12,8 @@ public class TouchPatternLines : MonoBehaviour
     private LineRenderer line;
     private Camera mainCamera;
 
+    private bool gameActive = false;
+
     private void Start()
     {
         mainCamera = Camera.main;

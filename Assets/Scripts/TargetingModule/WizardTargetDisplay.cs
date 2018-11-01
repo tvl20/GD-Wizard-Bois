@@ -13,7 +13,7 @@ public class WizardTargetDisplay : MonoBehaviour
 	private Wizard targetWizard = null;
 
 	[SerializeField] private Button targetButton;
-	[SerializeField] private Text targetButtonText;
+//	[SerializeField] private Text targetButtonText;
 	[SerializeField] private Text targetNameText;
 	[SerializeField] private Slider healthSlider;
 
@@ -22,7 +22,7 @@ public class WizardTargetDisplay : MonoBehaviour
 		targetButton.onClick.AddListener(onButtonClick);
 		targetButton.interactable = false;
 
-		targetButtonText.gameObject.SetActive(false);
+//		targetButtonText.gameObject.SetActive(false);
 		healthSlider.gameObject.SetActive(false);
 	}
 
@@ -30,6 +30,8 @@ public class WizardTargetDisplay : MonoBehaviour
 	{
 		if (targetWizard != null)
 		{
+			targetWizard.gameObject.transform.position = this.transform.position;
+
 			targetWizard.healthScript.EventOnTakeDamage -= onHealthUpdate;
 			targetWizard.healthScript.EventOnHealingReceived -= onHealthUpdate;
 		}
@@ -40,8 +42,8 @@ public class WizardTargetDisplay : MonoBehaviour
 		{
 			targetButton.interactable = false;
 
-			targetButtonText.gameObject.SetActive(false);
-			targetButtonText.text = "";
+//			targetButtonText.gameObject.SetActive(false);
+//			targetButtonText.text = "";
 
 			healthSlider.gameObject.SetActive(false);
 		}
@@ -52,15 +54,15 @@ public class WizardTargetDisplay : MonoBehaviour
 
 			targetButton.interactable = true;
 
-			targetButtonText.gameObject.SetActive(true);
+//			targetButtonText.gameObject.SetActive(true);
 			if (targetWizard.hasAuthority)
 			{
-				targetButtonText.text = "Self";
+//				targetButtonText.text = "Self";
 				targetNameText.text = "Self";
 			}
 			else
 			{
-				targetButtonText.text = "Wizard " + targetWizard.WizardId;
+//				targetButtonText.text = "Wizard " + targetWizard.WizardId;
 				targetNameText.text = "Wizard " + targetWizard.WizardId;
 			}
 

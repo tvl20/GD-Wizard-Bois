@@ -20,6 +20,8 @@ public class TouchPatternInput : MonoBehaviour
 
     private bool finishedPatternFrame = false;
 
+    private bool gameActive = false;
+
     private void Start()
     {
         currentPattern = new List<int>();
@@ -41,11 +43,16 @@ public class TouchPatternInput : MonoBehaviour
 
     public void addNodeToCurrentPattern(int node)
     {
-        if (!currentPattern.Contains(node) && !finishedPatternFrame)
+        if (gameActive && !currentPattern.Contains(node) && !finishedPatternFrame)
         {
             currentPattern.Add(node);
             onNodeAddedToPattern.Invoke(node);
         }
+    }
+
+    public void startGame()
+    {
+        gameActive = true;
     }
 
     private Spell checkPatternForSpell(int[] numberSequence)
