@@ -51,7 +51,7 @@ public class PlayerConnection : NetworkBehaviour
             Instantiate(WizardPrefab, spawnPosition, Quaternion.identity, this.transform);
         NetworkServer.SpawnWithClientAuthority(spawnedWizard, this.gameObject);
 
-        RpcUpdateTargeting();
+        RpcUpdateTargetingController();
     }
 
     [Command]
@@ -104,7 +104,7 @@ public class PlayerConnection : NetworkBehaviour
     ///////////////////////
     ////
     [ClientRpc]
-    public void RpcUpdateTargeting()
+    public void RpcUpdateTargetingController()
     {
         targetingController.NewWizardConnected();
         myWiz = targetingController.GetAllWizards()[0];

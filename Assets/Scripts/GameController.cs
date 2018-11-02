@@ -6,74 +6,78 @@ using UnityEngine.Networking;
 
 public class GameController : NetworkBehaviour
 {
-	[SerializeField] private GameObject victoryScreen;
-	[SerializeField] private GameObject defeatScreen;
+    [SerializeField] private GameObject victoryScreen;
+    [SerializeField] private GameObject defeatScreen;
 
-	[SerializeField] private TargetingController targetingController;
-	private Wizard[] allWizards;
+    [SerializeField] private TargetingController targetingController;
+    private Wizard[] allWizards;
 
-	private void Awake()
-	{
-		victoryScreen.SetActive(false);
-		defeatScreen.SetActive(false);
+    private void Awake()
+    {
+        victoryScreen.SetActive(false);
+        defeatScreen.SetActive(false);
 
-		targetingController.onNewWizardConnected.AddListener(updatePlayerList);
-	}
+        targetingController.onWizardListChanged.AddListener(updatePlayerList);
+        targetingController.boss.healthScript.EventOnZeroHealth += checkVictoryCondition;
+    }
 
-	private void updatePlayerList()
-	{
-		if (allWizards != null)
-		{
-			foreach (Wizard wizard in allWizards)
-			{
-				wizard.healthScript.EventOnZeroHealth -= checkVictoryCondition;
-			}
-		}
+    private void updatePlayerList()
+    {
+        if (allWizards != null)
+        {
+            foreach (Wizard wizard in allWizards)
+            {
+                wizard.healthScript.EventOnZeroHealth -= checkVictoryCondition;
+            }
+        }
 
-		Wizard[] newAllWizardsArray = targetingController.GetAllWizards();
-		allWizards = newAllWizardsArray;
+        Wizard[] newAllWizardsArray = targetingController.GetAllWizards();
+        allWizards = newAllWizardsArray;
 
-		foreach (Wizard wizard in allWizards)
-		{
-			wizard.healthScript.EventOnZeroHealth += checkVictoryCondition;
-		}
-	}
+        if (allWizards != null)
+        {
+            foreach (Wizard wizard in allWizards)
+            {
+                wizard.healthScript.EventOnZeroHealth += checkVictoryCondition;
+            }
+        }
+    }
 
-	private void checkVictoryCondition()
-	{
-		bool winConditionMet = false;
-		bool loseConditionMet = true;
+    private void checkVictoryCondition()
+    {
+        bool winConditionMet = false;
+        bool loseConditionMet = true;
 
-		winConditionMet = !targetingController.boss.healthScript.isAlive;
+        winConditionMet = !targetingController.boss.healthScript.isAlive;
 
-		foreach (Wizard wizard in allWizards)
-		{
-			if (wizard.healthScript.isAlive)
-			{
-				loseConditionMet = false;
-				break;
-			}
-		}
+        foreach (Wizard wizard in allWizards)
+        {
+            if (wizard.healthScript.isAlive)
+            {
+                loseConditionMet = false;
+                break;
+            }
+        }
 
-		if (winConditionMet)
-		{
-			victoryScreen.SetActive(true);
-		}
-		else if (loseConditionMet)
-		{
-			defeatScreen.SetActive(true);
-		}
-		else
-		{
-			return;
-		}
+        if (winConditionMet)
+        {
+            victoryScreen.SetActive(true);
+        }
+        else if (loseConditionMet)
+        {
+            defeatScreen.SetActive(true);
+        }
+        else
+        {
+            return;
+        }
 
-		if (isServer) Invoke("reloadScene", 3);
-	}
+        if (isServer) Invoke("reloadScene", 3);
+    }
 
-	private void reloadScene()
-	{
-		Debug.Log("Reloading scene");
-		NetworkManager.singleton.ServerChangeScene(NetworkManager.networkSceneName);
-	}
+    private void reloadScene()
+    {
+        Debug.Log("Reloading scene");
+        NetworkManager.singleton.ServerChangeScene(NetworkManager.networkSceneName);
+    }
 }

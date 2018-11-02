@@ -4,11 +4,13 @@ using UnityEngine;
 using UnityEngine.Events;
 using UnityEngine.UI;
 
-public class TargetWizardEvent : UnityEvent<int> { }
+public class TargetWizardEvent : UnityEvent<int, Transform> { }
 
 public class WizardTargetDisplay : MonoBehaviour
 {
 	public TargetWizardEvent OnWizardTargetClicked = new TargetWizardEvent();
+
+	public Transform targetIndicatorPosition;
 
 	private Wizard targetWizard = null;
 
@@ -21,16 +23,18 @@ public class WizardTargetDisplay : MonoBehaviour
 	{
 		targetButton.onClick.AddListener(onButtonClick);
 		targetButton.interactable = false;
+		Debug.Log("added the onbuttonclick to :" + targetButton);
 
 //		targetButtonText.gameObject.SetActive(false);
-		healthSlider.gameObject.SetActive(false);
+//		healthSlider.gameObject.SetActive(false);
+		targetNameText.gameObject.SetActive(false);
 	}
 
 	public void SetTarget(Wizard target)
 	{
 		if (targetWizard != null)
 		{
-			targetWizard.gameObject.transform.position = this.transform.position;
+			targetWizard.transform.parent.SetParent(null);
 
 			targetWizard.healthScript.EventOnTakeDamage -= onHealthUpdate;
 			targetWizard.healthScript.EventOnHealingReceived -= onHealthUpdate;
@@ -49,6 +53,14 @@ public class WizardTargetDisplay : MonoBehaviour
 		}
 		else
 		{
+			targetWizard.transform.parent.SetParent(this.transform);
+
+			// this makes sure that the button is always the last int he list
+			targetButton.transform.SetAsLastSibling();
+
+			targetWizard.transform.parent.localPosition = Vector3.zero;
+			targetWizard.transform.parent.localScale = Vector3.one;
+
 			targetWizard.healthScript.EventOnTakeDamage += onHealthUpdate;
 			targetWizard.healthScript.EventOnHealingReceived += onHealthUpdate;
 
@@ -66,7 +78,8 @@ public class WizardTargetDisplay : MonoBehaviour
 				targetNameText.text = "Wizard " + targetWizard.WizardId;
 			}
 
-			healthSlider.gameObject.SetActive(true);
+//			healthSlider.gameObject.SetActive(true);
+			targetNameText.gameObject.SetActive(true);
 			onHealthUpdate(0);
 		}
 	}
@@ -74,7 +87,7 @@ public class WizardTargetDisplay : MonoBehaviour
 	public void onButtonClick()
 	{
 		if (targetWizard == null) return;
-		OnWizardTargetClicked.Invoke(targetWizard.WizardId);
+		OnWizardTargetClicked.Invoke(targetWizard.WizardId, targetIndicatorPosition);
 	}
 
 	private void onHealthUpdate(int change)

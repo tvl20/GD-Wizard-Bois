@@ -20,4 +20,9 @@ public class MainConnectionMenuScript : MonoBehaviour
         NetworkManager.singleton.networkPort = 7777;
         NetworkManager.singleton.StartClient();
     }
+
+    public void QuitGame()
+    {
+        Application.Quit();
+    }
 }

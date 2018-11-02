@@ -8,9 +8,12 @@ using UnityEngine.UI;
 
 public class TargetingController : NetworkBehaviour
 {
-    public UnityEvent onNewWizardConnected = new UnityEvent();
+    public UnityEvent onWizardListChanged = new UnityEvent();
     public BossEnemy boss;
+    public Transform bossTargetIndicaterPos;
     public WizardTargetDisplay[] TargetDisplays;
+
+    public GameObject targetMarker;
 
     // The Wizard object of the localplayer will always be at position [0]
     private Wizard[] allWizards;
@@ -41,12 +44,17 @@ public class TargetingController : NetworkBehaviour
         {
             wizardTargetDisplay.OnWizardTargetClicked.AddListener(onWizardTargetSelected);
         }
+
+        onWizardListChanged.AddListener(UpdateTargetsDisplays);
+        onWizardListChanged.Invoke();
+
+        // to fix position of the target marker to match the default targetId
+        onBossTargetSelected();
     }
 
     public void NewWizardConnected()
     {
-        UpdateTargetsDisplays();
-        onNewWizardConnected.Invoke();
+        onWizardListChanged.Invoke();
     }
 
     public Wizard GetWizardById(int id)
@@ -100,6 +108,9 @@ public class TargetingController : NetworkBehaviour
     public void onBossTargetSelected()
     {
         targetId = -1;
+        Debug.Log("Boss is clicked, setting pos to boss");
+
+        setTargetMarkerParent(bossTargetIndicaterPos);
 
 //        if (allWizards[0].getLockedSpell() != null && !allWizards[0].castCooldown)
 //        {
@@ -109,9 +120,12 @@ public class TargetingController : NetworkBehaviour
         // TODO: PUT TARGET MARKER OVER BOSS
     }
 
-    private void onWizardTargetSelected(int wizId)
+    private void onWizardTargetSelected(int wizId, Transform targetMarkerPos)
     {
         targetId = wizId;
+        Debug.Log("Wizard is clicked, setting pos to wiz");
+
+        setTargetMarkerParent(targetMarkerPos);
 
 //        Spell lockedSpell = allWizards[0].getLockedSpell();
 //
@@ -135,5 +149,13 @@ public class TargetingController : NetworkBehaviour
 //        }
 
         // TODO: PUT TARGET MARKER OVER WIZARD
+    }
+
+    private void setTargetMarkerParent(Transform parent)
+    {
+        Debug.Log("Setting Pos to: " + parent.position.x + " - " + parent.position.y);
+        targetMarker.transform.SetParent(parent);
+        targetMarker.transform.localPosition = Vector3.zero;
+        targetMarker.transform.localScale = Vector3.one;
     }
 }
