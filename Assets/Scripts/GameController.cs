@@ -10,6 +10,10 @@ public class GameController : NetworkBehaviour
     [SerializeField] private GameObject defeatScreen;
 
     [SerializeField] private TargetingController targetingController;
+
+    [SerializeField] private float endgameScreenDelay = 3;
+    [SerializeField] private float reloadSceneDelay = 3;
+
     private Wizard[] allWizards;
 
     private void Awake()
@@ -23,6 +27,8 @@ public class GameController : NetworkBehaviour
 
     private void updatePlayerList()
     {
+        Debug.Log("updating playerlist");
+
         if (allWizards != null)
         {
             foreach (Wizard wizard in allWizards)
@@ -39,45 +45,62 @@ public class GameController : NetworkBehaviour
             foreach (Wizard wizard in allWizards)
             {
                 wizard.healthScript.EventOnZeroHealth += checkVictoryCondition;
+                Debug.Log("added victory check for wiz: " + wizard.WizardId);
             }
         }
     }
 
     private void checkVictoryCondition()
     {
-        bool winConditionMet = false;
+        Debug.Log("Checking Victory Condition");
+
+        bool winConditionMet = !targetingController.boss.healthScript.isAlive;
+        Debug.Log("win? " + winConditionMet);
+        if (winConditionMet)
+        {
+            Debug.Log("game is won");
+            StartCoroutine(showEndgameScreen(true, endgameScreenDelay, reloadSceneDelay));
+        }
+
+        Debug.Log("lose?");
         bool loseConditionMet = true;
-
-        winConditionMet = !targetingController.boss.healthScript.isAlive;
-
+        Debug.Log(allWizards);
         foreach (Wizard wizard in allWizards)
         {
+            Debug.Log(wizard);
+            Debug.Log(wizard.healthScript);
+            Debug.Log(wizard.healthScript.isAlive);
             if (wizard.healthScript.isAlive)
             {
                 loseConditionMet = false;
+                Debug.Log("lose");
                 break;
             }
         }
 
-        if (winConditionMet)
+        Debug.Log("Lose> " + loseConditionMet);
+        if (loseConditionMet)
+        {
+            Debug.Log("game is lost");
+            StartCoroutine(showEndgameScreen(false, endgameScreenDelay, reloadSceneDelay));
+        }
+    }
+
+    private IEnumerator showEndgameScreen(bool victory, float screenDelay, float reloadDelay)
+    {
+        yield return new WaitForSeconds(screenDelay);
+        if (victory)
         {
             victoryScreen.SetActive(true);
         }
-        else if (loseConditionMet)
+        else
         {
             defeatScreen.SetActive(true);
         }
-        else
-        {
-            return;
-        }
 
-        if (isServer) Invoke("reloadScene", 3);
-    }
+        if (!isServer) yield break;
 
-    private void reloadScene()
-    {
-        Debug.Log("Reloading scene");
+        yield return new WaitForSeconds(reloadDelay);
         NetworkManager.singleton.ServerChangeScene(NetworkManager.networkSceneName);
     }
 }

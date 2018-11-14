@@ -45,8 +45,7 @@ public class TargetingController : NetworkBehaviour
             wizardTargetDisplay.OnWizardTargetClicked.AddListener(onWizardTargetSelected);
         }
 
-        onWizardListChanged.AddListener(UpdateTargetsDisplays);
-        onWizardListChanged.Invoke();
+        UpdateTargetsDisplays();
 
         // to fix position of the target marker to match the default targetId
         onBossTargetSelected();
@@ -54,7 +53,7 @@ public class TargetingController : NetworkBehaviour
 
     public void NewWizardConnected()
     {
-        onWizardListChanged.Invoke();
+        UpdateTargetsDisplays();
     }
 
     public Wizard GetWizardById(int id)
@@ -86,6 +85,8 @@ public class TargetingController : NetworkBehaviour
 
         allWizards = new Wizard[wizards.Length];
 
+        Debug.Log("updating wizlist to length: " + allWizards.Length);
+
         for (int i = 0, j = 1; i < wizards.Length && j < TargetDisplays.Length; i++, j++)
         {
             Wizard wizScript = wizards[i].GetComponent<Wizard>();
@@ -103,6 +104,8 @@ public class TargetingController : NetworkBehaviour
                 allWizards[j] = wizScript;
             }
         }
+
+        onWizardListChanged.Invoke();
     }
 
     public void onBossTargetSelected()

@@ -13,6 +13,9 @@ public class Wizard : NetworkBehaviour
     [SyncVar] public bool castCooldown = false;
 
     public DamageAble healthScript;
+
+    [SerializeField] private Animator _animator;
+
 //	private HealthStatus statusEffectsScript;
 
 //    [SyncVar] private int lockedSpellIndex = -1;
@@ -35,6 +38,7 @@ public class Wizard : NetworkBehaviour
     private void Awake()
     {
         healthScript = GetComponent<DamageAble>();
+        healthScript.EventOnZeroHealth += setDeathTrigger;
     }
 
     // Start is executed before authority is given to this gameobject
@@ -57,7 +61,7 @@ public class Wizard : NetworkBehaviour
 
     private void castSpell(Spell spell)
     {
-        if (castCooldown || spell == null) return;
+        if (castCooldown || spell == null || !healthScript.isAlive) return;
 
 
         int spellIndex = -1;
@@ -71,8 +75,16 @@ public class Wizard : NetworkBehaviour
         }
 
         if (spellIndex > -1)
+        {
+            _animator.SetTrigger("CastingSpell");
             playerObject.CastSpell(spellIndex);
+        }
 //            CmdLockSpell(spellIndex);
+    }
+
+    private void setDeathTrigger()
+    {
+        _animator.SetTrigger("DeathTrigger");
     }
 
     private void resetCooldown()

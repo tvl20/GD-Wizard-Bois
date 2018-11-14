@@ -1424,6 +1424,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   spells: []
   healthScript: {fileID: 114115558551722478}
+  _animator: {fileID: 0}
 --- !u!114 &114066470681515624
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1569,17 +1570,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bc507993e60930a429511e840dcb029b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  onNewWizardConnected:
+  onWizardListChanged:
     m_PersistentCalls:
       m_Calls: []
     m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
       Culture=neutral, PublicKeyToken=null
   boss: {fileID: 114064906543009016}
+  bossTargetIndicaterPos: {fileID: 0}
   TargetDisplays:
   - {fileID: 114182162326233528}
   - {fileID: 114795712403065298}
   - {fileID: 114495583837227292}
   - {fileID: 114252025531679410}
+  targetMarker: {fileID: 0}
 --- !u!114 &114104236491770066
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1928,8 +1931,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e1439cc2d55c23a4894bc323499e4093, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  targetIndicatorPosition: {fileID: 0}
   targetButton: {fileID: 114342257315724464}
-  targetButtonText: {fileID: 114087600016353216}
   targetNameText: {fileID: 114131482996689502}
   healthSlider: {fileID: 114358876509059858}
 --- !u!114 &114186007008138626
@@ -2068,8 +2071,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e1439cc2d55c23a4894bc323499e4093, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  targetIndicatorPosition: {fileID: 0}
   targetButton: {fileID: 114979395545685624}
-  targetButtonText: {fileID: 114308092749156126}
   targetNameText: {fileID: 114992290477824828}
   healthSlider: {fileID: 114154244442752432}
 --- !u!114 &114257599494887006
@@ -2773,8 +2776,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e1439cc2d55c23a4894bc323499e4093, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  targetIndicatorPosition: {fileID: 0}
   targetButton: {fileID: 114326621283668750}
-  targetButtonText: {fileID: 114805484195607578}
   targetNameText: {fileID: 114639501549675538}
   healthSlider: {fileID: 114349078553337466}
 --- !u!114 &114506379022518084
@@ -3695,8 +3698,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e1439cc2d55c23a4894bc323499e4093, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  targetIndicatorPosition: {fileID: 0}
   targetButton: {fileID: 114196651695495748}
-  targetButtonText: {fileID: 114790818065598880}
   targetNameText: {fileID: 114912574746888566}
   healthSlider: {fileID: 114535115136055784}
 --- !u!114 &114805484195607578
