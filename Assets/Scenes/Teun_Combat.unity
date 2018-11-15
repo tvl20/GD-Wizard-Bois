@@ -1610,14 +1610,14 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &487522101
-Transform:
+--- !u!224 &487522101
+RectTransform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 487522100}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -213, y: 47, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 557717715}
@@ -1627,6 +1627,11 @@ Transform:
   m_Father: {fileID: 134056005}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 180, y: 272}
+  m_SizeDelta: {x: 100, y: 100}
+  m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &524169328
 GameObject:
   m_ObjectHideFlags: 0
@@ -2542,7 +2547,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 110, y: 110}
+  m_AnchoredPosition: {x: 90, y: 90}
   m_SizeDelta: {x: 200, y: 200}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &660473203
@@ -2561,9 +2566,9 @@ MonoBehaviour:
   DetectSwipeOnlyAfterRelease: 1
   LoopSpellBook: 1
   SpellPatterns:
-  - {fileID: 21300000, guid: d502632e3ccc7ee42988a86811004934, type: 3}
-  - {fileID: 21300000, guid: 043a647b0614b894ba63cc6888b7dd7a, type: 3}
-  - {fileID: 21300000, guid: b1d78982d66c4714380a7620ed76b754, type: 3}
+  - {fileID: 21300000, guid: c06ff5d2f9da2284fabcd33db565f92d, type: 3}
+  - {fileID: 21300000, guid: 9f9b9372864761241b27e5ce9246e6cf, type: 3}
+  - {fileID: 21300000, guid: 848e23b9aae90d5438ca226d298d3b1c, type: 3}
   SpellBookPage: {fileID: 1271193827}
 --- !u!114 &660473204
 MonoBehaviour:
@@ -4028,7 +4033,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 70, y: 0}
+  m_AnchoredPosition: {x: 30, y: 0}
   m_SizeDelta: {x: 100, y: 40}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &1073470231
@@ -4436,6 +4441,8 @@ MonoBehaviour:
   victoryScreen: {fileID: 660947909}
   defeatScreen: {fileID: 526513219}
   targetingController: {fileID: 2022291094}
+  endgameScreenDelay: 3
+  reloadSceneDelay: 3
 --- !u!4 &1313443934
 Transform:
   m_ObjectHideFlags: 0
@@ -4601,7 +4608,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 70, y: 0}
+  m_AnchoredPosition: {x: 30, y: 0}
   m_SizeDelta: {x: 100, y: 40}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &1368825854
@@ -5049,7 +5056,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 0}
   m_AnchorMax: {x: 1, y: 0}
-  m_AnchoredPosition: {x: -32, y: 328}
+  m_AnchoredPosition: {x: -35, y: 290}
   m_SizeDelta: {x: 100, y: 225}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &1457983350
@@ -5951,7 +5958,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 70, y: 0}
+  m_AnchoredPosition: {x: 30, y: 0}
   m_SizeDelta: {x: 100, y: 40}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &1876577291
@@ -6117,7 +6124,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 70, y: 0}
+  m_AnchoredPosition: {x: 30, y: 0}
   m_SizeDelta: {x: 100, y: 40}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &1899977127
@@ -6166,7 +6173,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 0}
   m_AnchorMax: {x: 1, y: 0}
-  m_AnchoredPosition: {x: -110, y: 110}
+  m_AnchoredPosition: {x: -90, y: 90}
   m_SizeDelta: {x: 200, y: 200}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1899977129
@@ -6906,22 +6913,22 @@ MonoBehaviour:
   m_SceneId:
     m_Value: 0
   m_AssetId:
-    i0: 0
-    i1: 0
-    i2: 0
-    i3: 0
-    i4: 0
-    i5: 0
-    i6: 0
-    i7: 0
-    i8: 0
-    i9: 0
-    i10: 0
-    i11: 0
-    i12: 0
-    i13: 0
-    i14: 0
-    i15: 0
+    i0: 222
+    i1: 61
+    i2: 87
+    i3: 74
+    i4: 143
+    i5: 62
+    i6: 141
+    i7: 84
+    i8: 235
+    i9: 131
+    i10: 102
+    i11: 90
+    i12: 214
+    i13: 98
+    i14: 234
+    i15: 33
   m_ServerOnly: 0
   m_LocalPlayerAuthority: 0
 --- !u!1 &2073745156
