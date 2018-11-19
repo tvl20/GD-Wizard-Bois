@@ -15,6 +15,7 @@ public class Wizard : NetworkBehaviour
     public DamageAble healthScript;
 
     [SerializeField] private Animator _animator;
+    [SerializeField] private NetworkAnimator _networkAnimator;
 
 //	private HealthStatus statusEffectsScript;
 
@@ -76,7 +77,9 @@ public class Wizard : NetworkBehaviour
 
         if (spellIndex > -1)
         {
-            _animator.SetTrigger("CastingSpell");
+//            _animator.SetTrigger("CastingSpell");
+            _networkAnimator.SetTrigger("CastingSpell");
+
             playerObject.CastSpell(spellIndex);
         }
 //            CmdLockSpell(spellIndex);
@@ -84,7 +87,8 @@ public class Wizard : NetworkBehaviour
 
     private void setDeathTrigger()
     {
-        _animator.SetTrigger("DeathTrigger");
+//        _animator.SetTrigger("DeathTrigger");
+        _networkAnimator.SetTrigger("DeathTrigger");
     }
 
     private void resetCooldown()

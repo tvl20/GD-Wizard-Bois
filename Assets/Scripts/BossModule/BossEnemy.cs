@@ -14,6 +14,7 @@ public class BossEnemy : NetworkBehaviour
     private List<Wizard> allWizards;
 
     [SerializeField] private Animator _animator;
+    [SerializeField] private NetworkAnimator _networkAnimator;
 
     private void Start()
     {
@@ -49,7 +50,8 @@ public class BossEnemy : NetworkBehaviour
         int spellUsedIndex = Random.Range(0, spells.Count);
         BossSpell usedSpell = spells[spellUsedIndex];
 
-        _animator.SetTrigger("CastSpellTrigger");
+//        _animator.SetTrigger("CastSpellTrigger");
+        _networkAnimator.SetTrigger("CastSpellTrigger");
 
         if (usedSpell.Type == BossSpell.TargetType.Party)
         {
@@ -72,6 +74,7 @@ public class BossEnemy : NetworkBehaviour
 
     private void setDeathTrigger()
     {
-        _animator.SetTrigger("DeathTrigger");
+//        _animator.SetTrigger("DeathTrigger");
+        _networkAnimator.SetTrigger("DeathTrigger");
     }
 }

@@ -39,6 +39,12 @@ public class TouchPatternInput : MonoBehaviour
             currentPattern.Clear();
             finishedPatternFrame = true;
         }
+        else if (Input.GetKeyUp(KeyCode.A))
+        {
+            OnFinishedSpell.Invoke(allSpells[0]);
+            currentPattern.Clear();
+            finishedPatternFrame = true;
+        }
     }
 
     public void addNodeToCurrentPattern(int node)

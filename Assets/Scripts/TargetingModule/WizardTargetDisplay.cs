@@ -23,7 +23,7 @@ public class WizardTargetDisplay : MonoBehaviour
 	{
 		targetButton.onClick.AddListener(onButtonClick);
 		targetButton.interactable = false;
-		Debug.Log("added the onbuttonclick to :" + targetButton);
+//		Debug.Log("added the onbuttonclick to :" + targetButton);
 
 //		targetButtonText.gameObject.SetActive(false);
 //		healthSlider.gameObject.SetActive(false);
@@ -32,9 +32,16 @@ public class WizardTargetDisplay : MonoBehaviour
 
 	public void SetTarget(Wizard target)
 	{
+//		Debug.Log(target);
+//		Debug.Log(target.transform.parent);
+
 		if (targetWizard != null)
 		{
-			targetWizard.transform.parent.SetParent(null);
+			// PARENT IS NULL
+
+
+//			targetWizard.transform.parent.SetParent(null);
+			targetWizard.transform.SetParent(null);
 
 			targetWizard.healthScript.EventOnTakeDamage -= onHealthUpdate;
 			targetWizard.healthScript.EventOnHealingReceived -= onHealthUpdate;
@@ -53,13 +60,15 @@ public class WizardTargetDisplay : MonoBehaviour
 		}
 		else
 		{
-			targetWizard.transform.parent.SetParent(this.transform);
+			// PARENT IS NULL
+
+			targetWizard.transform.SetParent(this.transform);
 
 			// this makes sure that the button is always the last int he list
 			targetButton.transform.SetAsLastSibling();
 
-			targetWizard.transform.parent.localPosition = Vector3.zero;
-			targetWizard.transform.parent.localScale = Vector3.one;
+			targetWizard.transform.localPosition = Vector3.zero;
+			targetWizard.transform.localScale = Vector3.one;
 
 			targetWizard.healthScript.EventOnTakeDamage += onHealthUpdate;
 			targetWizard.healthScript.EventOnHealingReceived += onHealthUpdate;
