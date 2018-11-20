@@ -6,10 +6,16 @@ using UnityEngine.Networking;
 [RequireComponent(typeof(DamageAble))]
 public class BossEnemy : NetworkBehaviour
 {
+    public AudioClip deathSound;
+    public AudioClip attackSound;
+    public AudioSource bossSource;
+
     public List<BossSpell> spells;
 
     public DamageAble healthScript;
-//	public HealthStatus statusScript;
+    //	public HealthStatus statusScript;
+
+    private int selectAttackSound;
 
     private List<Wizard> allWizards;
 
@@ -51,6 +57,9 @@ public class BossEnemy : NetworkBehaviour
 
         _animator.SetTrigger("CastSpellTrigger");
 
+        bossSource.clip = attackSound;
+        bossSource.Play();
+
         if (usedSpell.Type == BossSpell.TargetType.Party)
         {
             foreach (Wizard wizard in allWizards)
@@ -73,5 +82,8 @@ public class BossEnemy : NetworkBehaviour
     private void setDeathTrigger()
     {
         _animator.SetTrigger("DeathTrigger");
+
+        bossSource.clip = deathSound;
+        bossSource.Play();
     }
 }

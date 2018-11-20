@@ -7,12 +7,18 @@ using UnityEngine.Networking;
 [RequireComponent(typeof(DamageAble))]
 public class Wizard : NetworkBehaviour
 {
+    public AudioClip deathSound;
+    public AudioClip attackSound;
+    public AudioSource playerSource;
+
     public List<Spell> SpellBook;
 
     [SyncVar] public int WizardId;
     [SyncVar] public bool castCooldown = false;
 
     public DamageAble healthScript;
+
+    private int selectAttackSound;
 
     [SerializeField] private Animator _animator;
 
@@ -78,6 +84,9 @@ public class Wizard : NetworkBehaviour
         {
             _animator.SetTrigger("CastingSpell");
             playerObject.CastSpell(spellIndex);
+
+            playerSource.clip = attackSound;
+            playerSource.Play();
         }
 //            CmdLockSpell(spellIndex);
     }
@@ -85,6 +94,9 @@ public class Wizard : NetworkBehaviour
     private void setDeathTrigger()
     {
         _animator.SetTrigger("DeathTrigger");
+
+        playerSource.clip = deathSound;
+        playerSource.Play();
     }
 
     private void resetCooldown()

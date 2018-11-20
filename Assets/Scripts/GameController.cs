@@ -6,6 +6,10 @@ using UnityEngine.Networking;
 
 public class GameController : NetworkBehaviour
 {
+    public AudioClip defeatSound;
+    public AudioClip victorySound;
+    public AudioSource winconditionSource;
+
     [SerializeField] private GameObject victoryScreen;
     [SerializeField] private GameObject defeatScreen;
 
@@ -92,10 +96,16 @@ public class GameController : NetworkBehaviour
         if (victory)
         {
             victoryScreen.SetActive(true);
+
+            winconditionSource.clip = victorySound;
+            winconditionSource.Play();
         }
         else
         {
             defeatScreen.SetActive(true);
+
+            winconditionSource.clip = defeatSound;
+            winconditionSource.Play();
         }
 
         if (!isServer) yield break;

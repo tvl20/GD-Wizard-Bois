@@ -11,6 +11,10 @@ public class NodeAddedEvent : UnityEvent<int> { }
 
 public class TouchPatternInput : MonoBehaviour
 {
+    public AudioClip addNodeSound;
+    public AudioClip failedPatternSound;
+    public AudioSource castingSource;
+
     public SpellUnityEvent OnFinishedSpell = new SpellUnityEvent();
     public NodeAddedEvent onNodeAddedToPattern = new NodeAddedEvent();
 
@@ -38,6 +42,9 @@ public class TouchPatternInput : MonoBehaviour
             OnFinishedSpell.Invoke(spell);
             currentPattern.Clear();
             finishedPatternFrame = true;
+
+            castingSource.clip = failedPatternSound;
+            castingSource.Play();
         }
     }
 
@@ -47,6 +54,9 @@ public class TouchPatternInput : MonoBehaviour
         {
             currentPattern.Add(node);
             onNodeAddedToPattern.Invoke(node);
+
+            castingSource.clip = addNodeSound;
+            castingSource.Play();
         }
     }
 
