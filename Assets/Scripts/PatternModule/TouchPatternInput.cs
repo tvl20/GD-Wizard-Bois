@@ -46,6 +46,12 @@ public class TouchPatternInput : MonoBehaviour
             castingSource.clip = failedPatternSound;
             castingSource.Play();
         }
+        else if (Input.GetKeyUp(KeyCode.A))
+        {
+            OnFinishedSpell.Invoke(allSpells[0]);
+            currentPattern.Clear();
+            finishedPatternFrame = true;
+        }
     }
 
     public void addNodeToCurrentPattern(int node)

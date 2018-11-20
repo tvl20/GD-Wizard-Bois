@@ -101,7 +101,12 @@ public class TargetingController : NetworkBehaviour
             else
             {
                 TargetDisplays[j].SetTarget(wizScript);
-                allWizards[j] = wizScript;
+
+//                Debug.Log("J = " + j);
+                if (j < allWizards.Length)
+                {
+                    allWizards[j] = wizScript;
+                }
             }
         }
 
@@ -111,7 +116,7 @@ public class TargetingController : NetworkBehaviour
     public void onBossTargetSelected()
     {
         targetId = -1;
-        Debug.Log("Boss is clicked, setting pos to boss");
+//        Debug.Log("Boss is clicked, setting pos to boss");
 
         setTargetMarkerParent(bossTargetIndicaterPos);
 
@@ -126,7 +131,7 @@ public class TargetingController : NetworkBehaviour
     private void onWizardTargetSelected(int wizId, Transform targetMarkerPos)
     {
         targetId = wizId;
-        Debug.Log("Wizard is clicked, setting pos to wiz");
+//        Debug.Log("Wizard is clicked, setting pos to wiz");
 
         setTargetMarkerParent(targetMarkerPos);
 
@@ -156,7 +161,7 @@ public class TargetingController : NetworkBehaviour
 
     private void setTargetMarkerParent(Transform parent)
     {
-        Debug.Log("Setting Pos to: " + parent.position.x + " - " + parent.position.y);
+//        Debug.Log("Setting Pos to: " + parent.position.x + " - " + parent.position.y);
         targetMarker.transform.SetParent(parent);
         targetMarker.transform.localPosition = Vector3.zero;
         targetMarker.transform.localScale = Vector3.one;

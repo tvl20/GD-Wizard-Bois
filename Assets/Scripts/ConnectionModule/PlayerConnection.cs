@@ -17,6 +17,8 @@ public class PlayerConnection : NetworkBehaviour
         if (isLocalPlayer)
         {
             targetingController.setPlayerConnectionObject(this);
+
+//            Debug.Log("Yell for localwiz");
             CmdSpawnLocalPlayerWizard(this.transform.position);
         }
     }
@@ -47,8 +49,7 @@ public class PlayerConnection : NetworkBehaviour
     [Command]
     private void CmdSpawnLocalPlayerWizard(Vector3 spawnPosition)
     {
-        GameObject spawnedWizard =
-            Instantiate(WizardPrefab, spawnPosition, Quaternion.identity, this.transform);
+        GameObject spawnedWizard = Instantiate(WizardPrefab, spawnPosition, Quaternion.identity);
         NetworkServer.SpawnWithClientAuthority(spawnedWizard, this.gameObject);
 
         RpcUpdateTargetingController();
@@ -107,7 +108,11 @@ public class PlayerConnection : NetworkBehaviour
     public void RpcUpdateTargetingController()
     {
         targetingController.NewWizardConnected();
+
         myWiz = targetingController.GetAllWizards()[0];
+//        this.transform.SetParent(myWiz.transform.parent);
+//        myWiz.transform.SetParent(this.transform);
+
 //        Debug.Log(myWiz);
         myWiz.SetPlayerObject(this);
     }
