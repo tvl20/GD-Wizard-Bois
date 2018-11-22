@@ -20,7 +20,7 @@ public class GameController : NetworkBehaviour
 
     private Wizard[] allWizards;
 
-    private void Awake()
+    private void Start()
     {
         victoryScreen.SetActive(false);
         defeatScreen.SetActive(false);
@@ -61,15 +61,16 @@ public class GameController : NetworkBehaviour
 //        Debug.Log("Checking Victory Condition");
 
         bool winConditionMet = !targetingController.boss.healthScript.isAlive;
-//        Debug.Log("win? " + winConditionMet);
+        Debug.Log("win? " + winConditionMet);
         if (winConditionMet)
         {
-//            Debug.Log("game is won");
+            Debug.Log("game is won");
 //            StartCoroutine(showEndgameScreen(true, endgameScreenDelay, reloadSceneDelay));
             RpcGameEnd(true);
+            if (isServer) Invoke("reload", reloadSceneDelay + endgameScreenDelay);
         }
 
-//        Debug.Log("lose?");
+        Debug.Log("lose?");
         bool loseConditionMet = true;
 //        Debug.Log(allWizards);
         foreach (Wizard wizard in allWizards)
@@ -88,10 +89,16 @@ public class GameController : NetworkBehaviour
 //        Debug.Log("Lose> " + loseConditionMet);
         if (loseConditionMet)
         {
-//            Debug.Log("game is lost");
+            Debug.Log("game is lost");
 //            StartCoroutine(showEndgameScreen(false, endgameScreenDelay, reloadSceneDelay));
             RpcGameEnd(false);
+            if (isServer) Invoke("reload", reloadSceneDelay + endgameScreenDelay);
         }
+    }
+
+    private void reload()
+    {
+        NetworkManager.singleton.ServerChangeScene(NetworkManager.networkSceneName);
     }
 
     private IEnumerator showEndgameScreen(bool victory, float screenDelay, float reloadDelay)
@@ -111,11 +118,6 @@ public class GameController : NetworkBehaviour
             winconditionSource.clip = defeatSound;
             winconditionSource.Play();
         }
-
-        if (!isServer) yield break;
-
-        yield return new WaitForSeconds(reloadDelay);
-        NetworkManager.singleton.ServerChangeScene(NetworkManager.networkSceneName);
     }
 
     ///////////////

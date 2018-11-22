@@ -92,6 +92,7 @@ public class DamageAble : NetworkBehaviour
 				{
 					if (EventOnZeroHealth != null)
 					{
+						isAlive = false;
 						EventOnZeroHealth();
 					}
 				}
