@@ -23,19 +23,6 @@ public class Wizard : NetworkBehaviour
     [SerializeField] private Animator _animator;
     [SerializeField] private NetworkAnimator _networkAnimator;
 
-//	private HealthStatus statusEffectsScript;
-
-//    [SyncVar] private int lockedSpellIndex = -1;
-//    public Spell getLockedSpell()
-//    {
-//        if (lockedSpellIndex > -1 && lockedSpellIndex < SpellBook.Count)
-//        {
-//            return SpellBook[lockedSpellIndex];
-//        }
-//
-//        return null;
-//    }
-
     private PlayerConnection playerObject;
     public void SetPlayerObject(PlayerConnection obj)
     {
@@ -61,11 +48,6 @@ public class Wizard : NetworkBehaviour
             .AddListener(resetCooldown);
     }
 
-//    public void unlockSpell()
-//    {
-//        CmdLockSpell(-1);
-//    }
-
     private void castSpell(Spell spell)
     {
         if (castCooldown || spell == null || !healthScript.isAlive) return;
@@ -83,7 +65,6 @@ public class Wizard : NetworkBehaviour
 
         if (spellIndex > -1)
         {
-//            _animator.SetTrigger("CastingSpell");
             _networkAnimator.SetTrigger("CastingSpell");
 
             playerObject.CastSpell(spellIndex);
@@ -91,7 +72,6 @@ public class Wizard : NetworkBehaviour
             playerSource.clip = attackSound;
             playerSource.Play();
         }
-//            CmdLockSpell(spellIndex);
     }
 
     private void setDeathTrigger()
@@ -109,19 +89,12 @@ public class Wizard : NetworkBehaviour
         CmdResetCooldown();
     }
 
-    //////////////////////
-    ////
+    ////////////////////// Commands
     [Command]
     private void CmdSetWizardId(int id)
     {
         this.WizardId = id;
     }
-
-//    [Command]
-//    private void CmdLockSpell(int spellIndex)
-//    {
-//        lockedSpellIndex = spellIndex;
-//    }
 
     [Command]
     private void CmdResetCooldown()

@@ -24,7 +24,6 @@ public class SpellbookSwiping : MonoBehaviour
         UpdateSpellbook(swipeIndex);
     }
 
-    // Update is called once per frame
     private void Update()
     {
         foreach (Touch touch in Input.touches)
@@ -61,7 +60,6 @@ public class SpellbookSwiping : MonoBehaviour
             //Check if Horizontal swipe
             if (HorizontalValMove() > SWIPE_THRESHOLD && HorizontalValMove() > VerticalMove())
             {
-                //Debug.Log("Horizontal");
                 if (fingerDown.x - fingerUp.x > 0)//Right swipe
                 {
                     OnSwipeRight();
@@ -94,7 +92,6 @@ public class SpellbookSwiping : MonoBehaviour
 
     private void OnSwipeLeft()
     {
-        //Debug.Log("Swipe Left");
         if (swipeIndex > 0)
         {
             swipeIndex = swipeIndex - 1;
@@ -105,13 +102,11 @@ public class SpellbookSwiping : MonoBehaviour
                 swipeIndex = (SpellPatterns.Length - 1);
             }
         }
-//        Debug.Log(swipeIndex);
         UpdateSpellbook(swipeIndex);
     }
 
     private void OnSwipeRight()
     {
-        //Debug.Log("Swipe Right");
         if (swipeIndex < (SpellPatterns.Length - 1))
         {
             swipeIndex = swipeIndex + 1;
@@ -123,7 +118,6 @@ public class SpellbookSwiping : MonoBehaviour
                 swipeIndex = 0;
             }
         }
-//        Debug.Log(swipeIndex);
         UpdateSpellbook(swipeIndex);
     }
 }

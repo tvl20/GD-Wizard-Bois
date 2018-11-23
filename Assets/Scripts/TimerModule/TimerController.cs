@@ -47,8 +47,7 @@ public class TimerController : NetworkBehaviour
 		}
 	}
 
-	///////////////////
-	////
+	/////////////////// RPC's
 	[ClientRpc]
 	private void RpcResetTimer()
 	{

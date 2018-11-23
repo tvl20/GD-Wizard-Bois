@@ -15,7 +15,6 @@ public class WizardTargetDisplay : MonoBehaviour
 	private Wizard targetWizard = null;
 
 	[SerializeField] private Button targetButton;
-//	[SerializeField] private Text targetButtonText;
 	[SerializeField] private Text targetNameText;
 	[SerializeField] private Slider healthSlider;
 
@@ -23,24 +22,14 @@ public class WizardTargetDisplay : MonoBehaviour
 	{
 		targetButton.onClick.AddListener(onButtonClick);
 		targetButton.interactable = false;
-//		Debug.Log("added the onbuttonclick to :" + targetButton);
 
-//		targetButtonText.gameObject.SetActive(false);
-//		healthSlider.gameObject.SetActive(false);
 		targetNameText.gameObject.SetActive(false);
 	}
 
 	public void SetTarget(Wizard target)
 	{
-//		Debug.Log(target);
-//		Debug.Log(target.transform.parent);
-
 		if (targetWizard != null)
 		{
-			// PARENT IS NULL
-
-
-//			targetWizard.transform.parent.SetParent(null);
 			targetWizard.transform.SetParent(null);
 
 			targetWizard.healthScript.EventOnTakeDamage -= onHealthUpdate;
@@ -53,18 +42,12 @@ public class WizardTargetDisplay : MonoBehaviour
 		{
 			targetButton.interactable = false;
 
-//			targetButtonText.gameObject.SetActive(false);
-//			targetButtonText.text = "";
-
 			healthSlider.gameObject.SetActive(false);
 		}
 		else
 		{
-			// PARENT IS NULL
-
 			targetWizard.transform.SetParent(this.transform);
 
-			// this makes sure that the button is always the last int he list
 			targetButton.transform.SetAsLastSibling();
 
 			targetWizard.transform.localPosition = Vector3.zero;
@@ -75,19 +58,15 @@ public class WizardTargetDisplay : MonoBehaviour
 
 			targetButton.interactable = true;
 
-//			targetButtonText.gameObject.SetActive(true);
 			if (targetWizard.hasAuthority)
 			{
-//				targetButtonText.text = "Self";
 				targetNameText.text = "Self";
 			}
 			else
 			{
-//				targetButtonText.text = "Wizard " + targetWizard.WizardId;
 				targetNameText.text = "Wizard " + targetWizard.WizardId;
 			}
 
-//			healthSlider.gameObject.SetActive(true);
 			targetNameText.gameObject.SetActive(true);
 			onHealthUpdate(0);
 		}
@@ -101,7 +80,6 @@ public class WizardTargetDisplay : MonoBehaviour
 
 	private void onHealthUpdate(int change)
 	{
-//		Debug.Log("Health Update");
 		float sliderValue = (float) targetWizard.healthScript.GetCurrentHealth() / targetWizard.healthScript.MaxHealth;
 		healthSlider.value = sliderValue;
 
